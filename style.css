@@ -1,0 +1,1088 @@
+/* =========================================================
+   DSA TRACKER — PROFESSIONAL UI
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f6f8fc;
+    --surface: #ffffff;
+    --surface-soft: #f8fafc;
+
+    --text: #0f172a;
+    --text-secondary: #475569;
+    --muted: #94a3b8;
+
+    --border: #e2e8f0;
+
+    --primary: #4f46e5;
+    --primary-light: #eef2ff;
+
+    --success: #16a34a;
+    --success-light: #f0fdf4;
+
+    --danger: #dc2626;
+    --danger-light: #fef2f2;
+
+    --warning: #d97706;
+    --warning-light: #fffbeb;
+
+    --blue: #2563eb;
+    --blue-light: #eff6ff;
+
+    --cyan: #0891b2;
+    --cyan-light: #ecfeff;
+
+    --purple: #7c3aed;
+    --purple-light: #f5f3ff;
+
+    --shadow-sm:
+        0 1px 2px rgba(15, 23, 42, 0.04);
+
+    --shadow:
+        0 4px 14px rgba(15, 23, 42, 0.06);
+
+    --shadow-hover:
+        0 12px 28px rgba(15, 23, 42, 0.10);
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+body {
+    margin: 0;
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background: var(--bg);
+
+    color: var(--text);
+
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* =========================================================
+   TOP HEADER
+   ========================================================= */
+
+.top-header {
+    position: relative;
+
+    height: 86px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.top-header h1 {
+    margin: 0;
+
+    font-size: 32px;
+
+    font-weight: 750;
+
+    letter-spacing: -0.7px;
+}
+
+.last-updated {
+    position: absolute;
+
+    right: 32px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 12px;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.container {
+    width: 100%;
+
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+    padding: 42px 24px 70px;
+}
+
+
+/* =========================================================
+   CHALLENGE HEADER
+   ========================================================= */
+
+.challenge-header {
+    text-align: center;
+
+    padding: 0 0 34px;
+}
+
+.challenge-header h2 {
+    margin: 0 0 14px;
+
+    font-size: 29px;
+
+    font-weight: 750;
+
+    letter-spacing: -0.5px;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.challenge-status {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    margin: 0 0 25px;
+}
+
+.challenge-status span {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 7px 12px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 999px;
+
+    font-size: 13px;
+
+    color: var(--text-secondary);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.challenge-status strong {
+    color: var(--text);
+
+    margin-left: 4px;
+}
+
+
+/* =========================================================
+   LEGEND
+   ========================================================= */
+
+.legend {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 18px;
+
+    font-size: 12px;
+
+    color: var(--text-secondary);
+}
+
+.legend span {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+.box {
+    width: 9px;
+
+    height: 9px;
+
+    border-radius: 50%;
+
+    display: inline-block;
+}
+
+
+/* =========================================================
+   LEGEND COLORS
+   ========================================================= */
+
+.missed-box {
+    background: #ef4444;
+}
+
+.one-box {
+    background: #22c55e;
+}
+
+.medium-box {
+    background: #3b82f6;
+}
+
+.high-box {
+    background: #8b5cf6;
+}
+
+.theory-box {
+    background: #f59e0b;
+}
+
+.mixed-box {
+    background: #06b6d4;
+}
+
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.stats {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 16px;
+
+    margin: 8px 0 40px;
+}
+
+.stat-card {
+    min-height: 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+
+    padding: 18px;
+
+    text-align: center;
+
+    box-shadow:
+        0 4px 12px rgba(15, 23, 42, 0.05);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #c7d2fe;
+
+    box-shadow:
+        0 10px 25px rgba(79, 70, 229, 0.10);
+}
+
+.stat-card span {
+    color: #4f46e5;
+
+    font-size: 28px;
+    font-weight: 800;
+}
+
+
+/* Profile */
+
+.profile-card {
+    text-decoration: none;
+
+    color: inherit;
+
+    cursor: pointer;
+}
+
+.profile-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #c7d2fe;
+
+    box-shadow: var(--shadow-hover);
+}
+
+.profile-card:hover p {
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   TOOLBAR
+   ========================================================= */
+
+.toolbar {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+}
+
+.toolbar h2 {
+    margin: 0;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.3px;
+}
+
+select {
+    min-width: 200px;
+
+    padding: 10px 13px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    color: var(--text);
+
+    font-size: 13px;
+
+    outline: none;
+
+    cursor: pointer;
+
+    transition: border-color 0.2s ease;
+}
+
+select:focus {
+    border-color: var(--primary);
+}
+
+
+/* =========================================================
+   DAYS GRID
+   ========================================================= */
+
+.days-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(165px, 1fr));
+
+    gap: 15px;
+}
+
+
+/* =========================================================
+   BASE DAY CARD
+   ========================================================= */
+
+.day-card {
+    position: relative;
+
+    min-height: 155px;
+
+    padding: 17px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-top: 3px solid transparent;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.day-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow-hover);
+}
+
+
+/* =========================================================
+   ACTIVITY LEVELS
+
+   IMPORTANT:
+   Instead of painting the entire card,
+   we use subtle backgrounds + top border.
+   ========================================================= */
+
+
+/* =========================================================
+   BRIGHTER DAY CARD COLORS
+   ========================================================= */
+
+/* Pending - Neutral */
+.pending {
+    background: #f1f5f9;
+    border-color: #d8e0ea;
+    border-top-color: #cbd5e1;
+    color: #475569;
+    cursor: default;
+}
+
+.pending:hover {
+    transform: none;
+    box-shadow: var(--shadow-sm);
+}
+
+
+/* Missed - Soft Red */
+.missed {
+    background: #fee2e2;
+    border-color: #fecaca;
+    border-top-color: #ef4444;
+}
+
+
+/* 1–2 Problems - Fresh Green */
+.level-low {
+    background: #dcfce7;
+    border-color: #bbf7d0;
+    border-top: 4px solid #22c55e;
+}
+
+
+/* 3–5 Problems - Bright Blue */
+.level-medium {
+    background: #dbeafe;
+    border-color: #bfdbfe;
+    border-top: 4px solid #3b82f6;
+}
+
+
+/* 6+ Problems - Vibrant Purple */
+.level-high {
+    background: #ede9fe;
+    border-color: #ddd6fe;
+    border-top: 4px solid #8b5cf6;
+}
+
+
+/* Theory Only - Warm Amber */
+.level-theory {
+    background: #fef3c7;
+    border-color: #fde68a;
+    border-top: 4px solid #f59e0b;
+}
+
+
+/* Problems + Theory - Cyan / Teal */
+.level-mixed {
+    background: #cffafe;
+    border-color: #a5f3fc;
+    border-top: 4px solid #06b6d4;
+}
+
+
+/* =========================================================
+   DAY CARD CONTENT
+   ========================================================= */
+
+.day-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.day-header h3 {
+    margin: 0;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    color: var(--text);
+}
+
+.day-header span {
+    font-size: 13px;
+}
+
+
+/* Completed check */
+
+.check {
+    width: 21px;
+    height: 21px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #16a34a;
+    color: #ffffff;
+
+    border-radius: 50%;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    box-shadow: 0 2px 5px rgba(22, 163, 74, 0.20);
+}
+
+
+/* Date */
+
+.date {
+    margin: 7px 0 0;
+
+    font-size: 10px;
+
+    color: var(--muted);
+
+    opacity: 1;
+}
+
+
+/* Topic */
+
+.topic {
+    margin: 11px 0;
+
+    font-size: 12px;
+
+    line-height: 1.35;
+
+    font-weight: 650;
+
+    color: var(--text-secondary);
+}
+
+
+/* Info */
+
+.day-info {
+    margin-top: 11px;
+
+    font-size: 11px;
+
+    color: var(--text-secondary);
+}
+
+.day-info p {
+    margin: 6px 0;
+}
+
+
+/* Pending card */
+
+.pending .topic {
+    color: var(--muted);
+}
+
+.pending .date {
+    color: #a1aab8;
+}
+
+
+/* =========================================================
+   MODAL OVERLAY
+   ========================================================= */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    background: rgba(15, 23, 42, 0.52);
+
+    backdrop-filter: blur(4px);
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.modal-content {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 640px;
+
+    max-height: 86vh;
+
+    overflow-y: auto;
+
+    padding: 30px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 25px 60px rgba(15, 23, 42, 0.22);
+}
+
+.modal-content > h2 {
+    margin: 0;
+
+    padding-right: 35px;
+
+    text-align: left;
+
+    font-size: 23px;
+
+    letter-spacing: -0.3px;
+}
+
+
+/* X */
+
+.x-close {
+    position: absolute;
+
+    top: 17px;
+
+    right: 18px;
+
+    width: 34px;
+
+    height: 34px;
+
+    border: 0;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: var(--text-secondary);
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+.x-close:hover {
+    background: #f1f5f9;
+
+    color: var(--text);
+}
+
+
+/* =========================================================
+   MODAL SUMMARY
+   ========================================================= */
+
+.modal-summary {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+    margin: 20px 0;
+}
+
+.modal-summary > div {
+    padding: 13px 15px;
+
+    background: var(--surface-soft);
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    text-align: left;
+}
+
+.modal-summary strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.06em;
+}
+
+.modal-summary p {
+    margin: 0;
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   MODAL SECTIONS
+   ========================================================= */
+
+.section-title {
+    margin: 27px 0 13px;
+
+    padding-bottom: 9px;
+
+    border-bottom: 1px solid var(--border);
+
+    font-size: 15px;
+
+    color: var(--text);
+}
+
+
+/* =========================================================
+   QUESTIONS
+   ========================================================= */
+
+.question-list,
+.theory-list {
+    padding-left: 21px;
+}
+
+.question-list li,
+.theory-list li {
+    margin: 12px 0;
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+}
+
+.question-list a {
+    color: var(--blue);
+
+    text-decoration: none;
+
+    font-weight: 550;
+}
+
+.question-list a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   DIFFICULTY
+   ========================================================= */
+
+.difficulty {
+    display: inline-block;
+
+    margin-left: 7px;
+
+    padding: 3px 7px;
+
+    background: #f1f5f9;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 999px;
+
+    color: var(--text-secondary);
+
+    font-size: 9px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   PLATFORM BADGES
+   ========================================================= */
+
+.platform {
+    display: inline-block;
+
+    margin-left: 5px;
+
+    padding: 3px 7px;
+
+    border-radius: 999px;
+
+    font-size: 9px;
+
+    font-weight: 650;
+}
+
+
+/* LeetCode */
+
+.platform.leetcode {
+    background: #fff7ed;
+
+    color: #c2410c;
+
+    border: 1px solid #fed7aa;
+}
+
+
+/* GFG */
+
+.platform.gfg {
+    background: #f0fdf4;
+
+    color: #15803d;
+
+    border: 1px solid #bbf7d0;
+}
+
+
+/* HackerRank */
+
+.platform.hackerrank {
+    background: #ecfdf5;
+
+    color: #047857;
+
+    border: 1px solid #a7f3d0;
+}
+
+
+/* CodeStudio */
+
+.platform.codestudio,
+.platform.codingninjas {
+    background: #fff7ed;
+
+    color: #c2410c;
+
+    border: 1px solid #fed7aa;
+}
+
+
+/* Codeforces */
+
+.platform.codeforces {
+    background: #eff6ff;
+
+    color: #1d4ed8;
+
+    border: 1px solid #bfdbfe;
+}
+
+
+/* Other */
+
+.platform.other {
+    background: #f1f5f9;
+
+    color: #475569;
+
+    border: 1px solid #e2e8f0;
+}
+
+
+/* =========================================================
+   NOTES
+   ========================================================= */
+
+.notes {
+    padding: 13px 15px;
+
+    background: #fffbeb;
+
+    border: 1px solid #fde68a;
+
+    border-radius: 8px;
+
+    color: #78350f;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+   ========================================================= */
+
+.close-btn {
+    display: block;
+
+    margin: 30px 0 0 auto;
+
+    padding: 9px 20px;
+
+    border: 0;
+
+    border-radius: 8px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.close-btn:hover {
+    background: #4338ca;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .top-header {
+        height: auto;
+
+        min-height: 100px;
+
+        padding: 18px 20px 38px;
+    }
+
+    .top-header h1 {
+        font-size: 28px;
+    }
+
+    .last-updated {
+        top: auto;
+
+        right: 50%;
+
+        bottom: 12px;
+
+        transform: translateX(50%);
+
+        white-space: nowrap;
+    }
+
+    .challenge-header h2 {
+        font-size: 24px;
+    }
+
+    .toolbar {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    select {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .container {
+        padding: 30px 16px 50px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+    }
+
+    .stat-card {
+        min-height: 90px;
+
+        padding: 14px 8px;
+    }
+
+    .days-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+    .day-card {
+        min-height: 145px;
+
+        padding: 14px;
+    }
+
+    .legend {
+        gap: 11px;
+    }
+
+    .modal-content {
+        padding: 23px;
+    }
+}
+
+
+@media (max-width: 360px) {
+
+    .days-grid {
+        grid-template-columns: 1fr;
+    }
+}

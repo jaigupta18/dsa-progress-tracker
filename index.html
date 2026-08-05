@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Learnings - DSA Tracker</title>
+
+    <!-- Relative path: GitHub Pages compatible -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+         ========================= -->
+
+    <header class="top-header">
+
+        <h1>💻 My Learnings</h1>
+
+        <div class="last-updated">
+            Last updated:
+            <span id="lastUpdated"></span>
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN CONTENT
+         ========================= -->
+
+    <main class="container">
+
+
+        <!-- =========================
+             CHALLENGE HEADER
+             ========================= -->
+
+        <section class="challenge-header">
+
+            <h2>👨‍💻 30-Day Coding Challenge Tracker</h2>
+
+
+            <!-- Challenge Status -->
+
+            <div class="challenge-status">
+
+                <span>
+                    ✅ Done:
+                    <strong id="doneDays">0</strong>
+                </span>
+
+                <span>
+                    ❌ Missed:
+                    <strong id="missedDays">0</strong>
+                </span>
+
+                <span>
+                    ⌛ Pending:
+                    <strong id="pendingDays">0</strong>
+                </span>
+
+            </div>
+
+
+            <!-- Legend -->
+
+            <div class="legend">
+
+                <span>
+                    <i class="box missed-box"></i>
+                    Missed
+                </span>
+
+                <span>
+                    <i class="box one-box"></i>
+                    1–2 Problems
+                </span>
+
+                <span>
+                    <i class="box medium-box"></i>
+                    3–5 Problems
+                </span>
+
+                <span>
+                    <i class="box high-box"></i>
+                    6+ Problems
+                </span>
+
+                <span>
+                    <i class="box theory-box"></i>
+                    Theory Only
+                </span>
+
+                <span>
+                    <i class="box mixed-box"></i>
+                    Problems + Theory
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             STATISTICS
+             ========================= -->
+
+        <section class="stats">
+
+            <!-- Questions -->
+
+            <div class="stat-card">
+
+                <span id="totalQuestions">0</span>
+
+                <p>Questions</p>
+
+            </div>
+
+
+            <!-- Theory -->
+
+            <div class="stat-card">
+
+                <span id="totalTheory">0</span>
+
+                <p>Theory Topics</p>
+
+            </div>
+
+
+            <!-- Streak -->
+
+            <div class="stat-card">
+
+                <span>
+                    🔥 <span id="streakCount">0</span>
+                </span>
+
+                <p>Day Streak</p>
+
+            </div>
+
+
+            <!-- LeetCode Profile -->
+
+            <a
+                id="leetcodeProfile"
+                class="stat-card profile-card"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <span>👨‍💻</span>
+
+                <p>LeetCode Profile ↗</p>
+
+            </a>
+
+        </section>
+
+
+        <!-- =========================
+             DAILY PROGRESS TOOLBAR
+             ========================= -->
+
+        <section class="toolbar">
+
+            <h2>Daily Progress</h2>
+
+            <select
+                id="topicFilter"
+                aria-label="Filter progress by topic"
+            >
+
+                <option value="all">
+                    All Topics
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <!-- =========================
+             DAY CARDS
+             ========================= -->
+
+        <section
+            id="daysContainer"
+            class="days-grid"
+        >
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         DAY DETAILS MODAL
+         ========================= -->
+
+    <div
+        id="modal"
+        class="modal"
+        aria-hidden="true"
+    >
+
+        <div class="modal-content">
+
+            <button
+                class="x-close"
+                onclick="closeModal()"
+                aria-label="Close"
+            >
+                &times;
+            </button>
+
+
+            <h2 id="modalTitle"></h2>
+
+
+            <div id="modalBody"></div>
+
+
+            <button
+                onclick="closeModal()"
+                class="close-btn"
+            >
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+         Relative paths:
+         GitHub Pages compatible
+         ========================= -->
+
+    <!-- Load data first -->
+    <script src="data.js"></script>
+
+    <!-- Then application logic -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

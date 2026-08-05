@@ -1,0 +1,276 @@
+const CHALLENGE_DAYS = 30;
+
+const LEETCODE_PROFILE = "https://leetcode.com/u/jaigupta18/";
+
+// status:
+// "done"    -> completed day
+// "missed"  -> missed day
+// "pending" -> upcoming day
+
+const dsaData = [
+
+    // =========================
+    // DAY 1 - JUL 30
+    // =========================
+    {
+        day: 1,
+        date: "Jul 30, 2026",
+        status: "done",
+        topic: "Sliding Window & Strings",
+
+        questions: [
+            {
+                number: 209,
+                name: "Minimum Size Subarray Sum",
+                difficulty: "Medium",
+                //if we don't provide platform, it will make LeetCode the default
+                platform: "LeetCode",
+                link: "https://leetcode.com/problems/minimum-size-subarray-sum/"
+            },
+            {
+                number: 151,
+                name: "Reverse Words in a String",
+                difficulty: "Medium",
+                link: "https://leetcode.com/problems/reverse-words-in-a-string/"
+            }
+        ],
+
+        theory: [],
+
+        notes: "",
+
+    },
+
+
+    // =========================
+    // DAY 2 - JUL 31
+    // =========================
+    {
+        day: 2,
+        date: "Jul 31, 2026",
+        status: "done",
+        topic: "Hashing & Sliding Window",
+
+        questions: [
+            {
+                number: 219,
+                name: "Contains Duplicate II",
+                difficulty: "Easy",
+                link: "https://leetcode.com/problems/contains-duplicate-ii/"
+            },
+            {
+                number: 76,
+                name: "Minimum Window Substring",
+                difficulty: "Hard",
+                link: "https://leetcode.com/problems/minimum-window-substring/"
+            }
+        ],
+
+        theory: [],
+
+        notes: "",
+
+    },
+
+
+    // =========================
+    // DAY 3 - AUG 1
+    // =========================
+    {
+        day: 3,
+        date: "Aug 1, 2026",
+        status: "done",
+        topic: "Sliding Window & Arrays",
+
+        questions: [
+            {
+                number: 3014,
+                name: "Minimum Number of Pushes to Type Word I",
+                difficulty: "Easy",
+                link: "https://leetcode.com/problems/minimum-number-of-pushes-to-type-word-i/"
+            },
+            {
+                number: 2444,
+                name: "Count Subarrays With Fixed Bounds",
+                difficulty: "Hard",
+                link: "https://leetcode.com/problems/count-subarrays-with-fixed-bounds/"
+            },
+            {
+                number: 1456,
+                name: "Maximum Number of Vowels in a Substring of Given Length",
+                difficulty: "Medium",
+                link: "https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/"
+            },
+            {
+                number: 2090,
+                name: "K Radius Subarray Averages",
+                difficulty: "Medium",
+                link: "https://leetcode.com/problems/k-radius-subarray-averages/"
+            },
+            {
+                number: 658,
+                name: "Find K Closest Elements",
+                difficulty: "Medium",
+                link: "https://leetcode.com/problems/find-k-closest-elements/"
+            },
+            {
+                number: 567,
+                name: "Permutation in String",
+                difficulty: "Medium",
+                link: "https://leetcode.com/problems/permutation-in-string/"
+            },
+            {
+                number: 724,
+                name: "Find Pivot Index",
+                difficulty: "Easy",
+                link: "https://leetcode.com/problems/find-pivot-index/"
+            }
+        ],
+
+        theory: [],
+
+        notes: "",
+
+        
+    },
+
+
+    // =========================
+    // DAY 4 - AUG 2
+    // =========================
+    {
+        day: 4,
+        date: "Aug 2, 2026",
+        status: "done",
+        topic: "Sliding Window & Arrays",
+
+        questions: [
+            {
+                number: 121,
+                name: "Best Time to Buy and Sell Stock",
+                difficulty: "Easy",
+                link: "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
+            },
+            {
+                number: 239,
+                name: "Sliding Window Maximum",
+                difficulty: "Hard",
+                link: "https://leetcode.com/problems/sliding-window-maximum/"
+            },
+            {
+                number: 3,
+                name: "Longest Substring Without Repeating Characters",
+                difficulty: "Medium",
+                link: "https://leetcode.com/problems/longest-substring-without-repeating-characters/"
+            }
+        ],
+
+        theory: [],
+
+        notes: "",
+
+        
+    },
+
+
+    // =========================
+    // DAY 5 - AUG 3
+    // =========================
+    {
+        day: 5,
+        date: "Aug 3, 2026",
+        status: "done",
+        topic: "Binary Search",
+
+        questions: [
+            {
+                number: 704,
+                name: "Binary Search",
+                difficulty: "Easy",
+                link: "https://leetcode.com/problems/binary-search/"
+            },
+            {
+                number: 33,
+                name: "Search in Rotated Sorted Array",
+                difficulty: "Medium",
+                link: "https://leetcode.com/problems/search-in-rotated-sorted-array/"
+            }
+        ],
+
+        theory: [],
+
+        notes: "",
+
+        
+    },
+
+
+    // =========================
+    // DAY 6 - AUG 4
+    // =========================
+    {
+        day: 6,
+        date: "Aug 4, 2026",
+        status: "done",
+        topic: "Binary Search",
+
+        questions: [
+            {
+                number: 162,
+                name: "Find Peak Element",
+                difficulty: "Medium",
+                link: "https://leetcode.com/problems/find-peak-element/"
+            }
+        ],
+
+        theory: [],
+
+        notes: "",
+
+        
+    },
+
+
+    // =========================
+    // DAY 7 - AUG 5
+    // =========================
+    {
+        day: 7,
+        date: "Aug 5, 2026",
+        status: "done",
+        topic: "Arrays & Binary Search",
+
+        questions: [
+            {
+                number: 3731,
+                name: "Find Missing Elements",
+                difficulty: "Easy",
+                link: "https://leetcode.com/problems/find-missing-elements/"
+            },
+            {
+                number: 34,
+                name: "Find First and Last Position of Element in Sorted Array",
+                difficulty: "Medium",
+                link: "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/"
+            },
+            {
+                number: 189,
+                name: "Rotate Array",
+                difficulty: "Medium",
+                link: "https://leetcode.com/problems/rotate-array/"
+            }
+        ],
+
+        theory: [
+        "Lower-Upper Bound",
+        "Classic Binary Search"
+       ],
+
+        // theory: [],
+
+        notes: "",
+
+        
+    }
+
+];
