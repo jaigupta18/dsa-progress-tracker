@@ -111,59 +111,71 @@
              STATISTICS
              ========================= -->
 
-        <section class="stats">
+ <section class="stats">
 
-            <!-- Questions -->
+    <!-- Problems Solved -->
+    <div class="stat-card">
+        <span id="totalQuestions">0</span>
+        <p>Problems Solved</p>
+    </div>
 
-            <div class="stat-card">
 
-                <span id="totalQuestions">0</span>
+    <!-- Difficulty Breakdown -->
+    <div class="stat-card difficulty-card">
 
-                <p>Questions</p>
+        <div class="difficulty-breakdown">
 
+            <div class="difficulty-item easy">
+                <strong id="easyCount">0</strong>
+                <span>Easy</span>
             </div>
 
+            <div class="difficulty-divider"></div>
 
-            <!-- Theory -->
-
-            <div class="stat-card">
-
-                <span id="totalTheory">0</span>
-
-                <p>Theory Topics</p>
-
+            <div class="difficulty-item medium">
+                <strong id="mediumCount">0</strong>
+                <span>Medium</span>
             </div>
 
+            <div class="difficulty-divider"></div>
 
-            <!-- Streak -->
-
-            <div class="stat-card">
-
-                <span>
-                    🔥 <span id="streakCount">0</span>
-                </span>
-
-                <p>Day Streak</p>
-
+            <div class="difficulty-item hard">
+                <strong id="hardCount">0</strong>
+                <span>Hard</span>
             </div>
 
+        </div>
 
-            <!-- LeetCode Profile -->
+        <p>Difficulty Breakdown</p>
 
-            <a
-                id="leetcodeProfile"
-                class="stat-card profile-card"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
+    </div>
 
-                <span>👨‍💻</span>
 
-                <p>LeetCode Profile ↗</p>
+    <!-- Streak -->
+    <div class="stat-card">
 
-            </a>
+        <span>
+            🔥 <span id="streakCount">0</span>
+        </span>
 
-        </section>
+        <p>Day Streak</p>
+
+    </div>
+
+
+    <!-- LeetCode -->
+    <a
+        id="leetcodeProfile"
+        class="stat-card profile-card"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        <span>👨‍💻</span>
+
+        <p>LeetCode Profile ↗</p>
+    </a>
+
+</section>
 
 
         <!-- =========================

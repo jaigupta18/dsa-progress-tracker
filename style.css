@@ -993,96 +993,212 @@ select:focus {
 /* =========================================================
    RESPONSIVE
    ========================================================= */
+/* =========================================================
+   DIFFICULTY STAT COLORS
+   ========================================================= */
 
-@media (max-width: 800px) {
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.stats {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 16px;
+
+    margin: 8px 0 40px;
+}
+
+
+.stat-card {
+    min-height: 115px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 14px;
+
+    padding: 18px;
+
+    text-align: center;
+
+    box-shadow:
+        0 4px 14px rgba(15, 23, 42, 0.05);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.stat-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #c7d2fe;
+
+    box-shadow:
+        0 10px 25px rgba(79, 70, 229, 0.10);
+}
+
+
+.stat-card > span {
+    font-size: 28px;
+
+    font-weight: 800;
+
+    color: #4f46e5;
+}
+
+
+.stat-card > p {
+    margin: 10px 0 0;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    color: #64748b;
+}
+
+
+/* =========================================================
+   DIFFICULTY BREAKDOWN
+   ========================================================= */
+
+.difficulty-card {
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+
+.difficulty-breakdown {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+.difficulty-item {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 4px;
+}
+
+
+.difficulty-item strong {
+    font-size: 24px;
+
+    font-weight: 800;
+
+    line-height: 1;
+}
+
+
+.difficulty-item span {
+    font-size: 10px;
+
+    font-weight: 600;
+
+    color: #64748b;
+}
+
+
+/* Easy */
+
+.difficulty-item.easy strong {
+    color: #16a34a;
+}
+
+
+/* Medium */
+
+.difficulty-item.medium strong {
+    color: #d97706;
+}
+
+
+/* Hard */
+
+.difficulty-item.hard strong {
+    color: #dc2626;
+}
+
+
+/* Divider */
+
+.difficulty-divider {
+    width: 1px;
+
+    height: 34px;
+
+    background: #e2e8f0;
+}
+
+
+/* =========================================================
+   PROFILE
+   ========================================================= */
+
+.profile-card {
+    text-decoration: none;
+
+    color: inherit;
+
+    cursor: pointer;
+}
+
+
+.profile-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #c7d2fe;
+
+    box-shadow:
+        0 10px 25px rgba(79, 70, 229, 0.10);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
 
     .stats {
         grid-template-columns: repeat(2, 1fr);
     }
-
-    .top-header {
-        height: auto;
-
-        min-height: 100px;
-
-        padding: 18px 20px 38px;
-    }
-
-    .top-header h1 {
-        font-size: 28px;
-    }
-
-    .last-updated {
-        top: auto;
-
-        right: 50%;
-
-        bottom: 12px;
-
-        transform: translateX(50%);
-
-        white-space: nowrap;
-    }
-
-    .challenge-header h2 {
-        font-size: 24px;
-    }
-
-    .toolbar {
-        align-items: stretch;
-
-        flex-direction: column;
-    }
-
-    select {
-        width: 100%;
-    }
 }
 
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 500px) {
 
-    .container {
-        padding: 30px 16px 50px;
-    }
-
     .stats {
-        grid-template-columns: 1fr 1fr;
-
-        gap: 10px;
+        grid-template-columns: 1fr;
     }
 
     .stat-card {
-        min-height: 90px;
-
-        padding: 14px 8px;
-    }
-
-    .days-grid {
-        grid-template-columns: repeat(2, 1fr);
-
-        gap: 10px;
-    }
-
-    .day-card {
-        min-height: 145px;
-
-        padding: 14px;
-    }
-
-    .legend {
-        gap: 11px;
-    }
-
-    .modal-content {
-        padding: 23px;
-    }
-}
-
-
-@media (max-width: 360px) {
-
-    .days-grid {
-        grid-template-columns: 1fr;
+        min-height: 105px;
     }
 }

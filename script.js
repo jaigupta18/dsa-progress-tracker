@@ -1,4 +1,10 @@
-const container=document.getElementById("daysContainer"),topicFilter=document.getElementById("topicFilter");
+const container = document.getElementById("daysContainer");
+const topicFilter = document.getElementById("topicFilter");
+
+
+/* =========================================================
+   GET DAY CARD LEVEL
+   ========================================================= */
 
 function getLevel(d) {
 
@@ -14,36 +20,31 @@ function getLevel(d) {
     const theory = d.theory.length;
 
 
-    // BOTH QUESTIONS + THEORY
-
+    // Problems + Theory
     if (questions > 0 && theory > 0) {
         return "level-mixed";
     }
 
 
-    // THEORY ONLY
-
+    // Theory Only
     if (questions === 0 && theory > 0) {
         return "level-theory";
     }
 
 
-    // 1-2 QUESTIONS
-
+    // 1–2 Problems
     if (questions >= 1 && questions <= 2) {
         return "level-low";
     }
 
 
-    // 3-5 QUESTIONS
-
+    // 3–5 Problems
     if (questions >= 3 && questions <= 5) {
         return "level-medium";
     }
 
 
-    // 6+ QUESTIONS
-
+    // 6+ Problems
     if (questions >= 6) {
         return "level-high";
     }
@@ -51,118 +52,407 @@ function getLevel(d) {
 
     return "pending";
 }
-function allDays(){
- const map=new Map(dsaData.map(d=>[d.day,d]));
- return Array.from({length:CHALLENGE_DAYS},(_,i)=>map.get(i+1)||{day:i+1,date:"",status:"pending",topic:"Pending",questions:[],theory:[],notes:""});
+
+
+/* =========================================================
+   CREATE ALL 30 DAYS
+   ========================================================= */
+
+function allDays() {
+
+    const map = new Map(
+        dsaData.map(d => [d.day, d])
+    );
+
+
+    return Array.from(
+        { length: CHALLENGE_DAYS },
+
+        (_, i) =>
+            map.get(i + 1) || {
+                day: i + 1,
+                date: "",
+                status: "pending",
+                topic: "Pending",
+                questions: [],
+                theory: [],
+                notes: ""
+            }
+    );
 }
-function renderDays(filter="all"){
- container.innerHTML="";
- allDays().filter(d=>filter==="all"||d.topic===filter).forEach(d=>{
-  const card=document.createElement("article");card.className=`day-card ${getLevel(d)}`;
-  const icon=d.status==="done"?"✓":d.status==="missed"?"✕":"⌛";
-  card.innerHTML=`<div class="day-header"><h3>Day ${d.day}</h3><span>${icon}</span></div>
-  <p class="date">${d.date||"Not logged yet"}</p><div class="topic">${d.topic}</div>
-  <div class="day-info">${d.questions.length?`<p>💻 ${d.questions.length} question${d.questions.length!==1?"s":""}</p>`:""}
-  ${d.theory.length?`<p>📚 ${d.theory.length} theory topic${d.theory.length!==1?"s":""}</p>`:""}</div>`;
-  if(d.status==="done")card.onclick=()=>openModal(d);container.appendChild(card);
- });
+
+
+/* =========================================================
+   RENDER DAY CARDS
+   ========================================================= */
+
+function renderDays(filter = "all") {
+
+    container.innerHTML = "";
+
+
+    allDays()
+        .filter(
+            d => filter === "all" || d.topic === filter
+        )
+        .forEach(d => {
+
+            const card = document.createElement("article");
+
+            card.className =
+                `day-card ${getLevel(d)}`;
+
+
+            const icon =
+                d.status === "done"
+                    ? "✓"
+                    : d.status === "missed"
+                        ? "✕"
+                        : "⌛";
+
+
+            card.innerHTML = `
+
+                <div class="day-header">
+
+                    <h3>Day ${d.day}</h3>
+
+                    <span>${icon}</span>
+
+                </div>
+
+
+                <p class="date">
+                    ${d.date || "Not logged yet"}
+                </p>
+
+
+                <div class="topic">
+                    ${d.topic}
+                </div>
+
+
+                <div class="day-info">
+
+                    ${
+                        d.questions.length
+                            ? `
+                                <p>
+                                    💻 ${d.questions.length}
+                                    question${d.questions.length !== 1 ? "s" : ""}
+                                </p>
+                              `
+                            : ""
+                    }
+
+
+                    ${
+                        d.theory.length
+                            ? `
+                                <p>
+                                    📚 ${d.theory.length}
+                                    theory topic${d.theory.length !== 1 ? "s" : ""}
+                                </p>
+                              `
+                            : ""
+                    }
+
+                </div>
+            `;
+
+
+            if (d.status === "done") {
+
+                card.onclick = () =>
+                    openModal(d);
+            }
+
+
+            container.appendChild(card);
+
+        });
 }
-function openModal(d){
- document.getElementById("modalTitle").textContent=`Day ${d.day} · ${d.date}`;
- let c=`<div class="modal-summary"><div><strong>Topic</strong><p>${d.topic}</p></div></div>`;
- if(d.questions.length){c+='<h3 class="section-title">💻 Questions Solved</h3><ul class="question-list">';d.questions.forEach(q => {
 
-    const platform = q.platform || "LeetCode";
 
-    c += `
-        <li class="question-item">
+/* =========================================================
+   OPEN DAY DETAILS
+   ========================================================= */
 
-            <a
-                href="${q.link}"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                ${q.number ? `#${q.number} ` : ""}
-                ${q.name}
-            </a>
+function openModal(d) {
 
-            <span class="difficulty">
-                ${q.difficulty}
-            </span>
+    document.getElementById("modalTitle").textContent =
+        `Day ${d.day} · ${d.date}`;
 
-            <span class="platform ${platform.toLowerCase()}">
-                ${platform}
-            </span>
 
-        </li>
+    let content = `
+
+        <div class="modal-summary">
+
+            <div>
+
+                <strong>Topic</strong>
+
+                <p>${d.topic}</p>
+
+            </div>
+
+        </div>
     `;
-});c+="</ul>"}
- if(d.theory.length){c+='<h3 class="section-title">📚 Theory Studied</h3><ul class="theory-list">';d.theory.forEach(t=>c+=`<li>${t}</li>`);c+="</ul>"}
- if(d.notes)c+=`<h3 class="section-title">📝 Notes</h3><div class="notes">${d.notes}</div>`;
- document.getElementById("modalBody").innerHTML=c;document.getElementById("modal").style.display="flex";
+
+
+    /* QUESTIONS */
+
+    if (d.questions.length) {
+
+        content += `
+
+            <h3 class="section-title">
+                💻 Questions Solved
+            </h3>
+
+            <ul class="question-list">
+        `;
+
+
+        d.questions.forEach(q => {
+
+            // Default platform = LeetCode
+            const platform =
+                q.platform || "LeetCode";
+
+
+            // Convert platform name into safe CSS class
+            // "Coding Ninjas" -> "codingninjas"
+            const platformClass =
+                platform
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]/g, "");
+
+
+            content += `
+
+                <li class="question-item">
+
+                    <a
+                        href="${q.link}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        ${
+                            q.number
+                                ? `#${q.number} `
+                                : ""
+                        }
+
+                        ${q.name}
+
+                    </a>
+
+
+                    <span class="difficulty">
+                        ${q.difficulty}
+                    </span>
+
+
+                    <span
+                        class="platform ${platformClass}"
+                    >
+                        ${platform}
+                    </span>
+
+                </li>
+            `;
+
+        });
+
+
+        content += "</ul>";
+    }
+
+
+    /* THEORY */
+
+    if (d.theory.length) {
+
+        content += `
+
+            <h3 class="section-title">
+                📚 Theory Studied
+            </h3>
+
+            <ul class="theory-list">
+        `;
+
+
+        d.theory.forEach(t => {
+
+            content += `
+                <li>${t}</li>
+            `;
+
+        });
+
+
+        content += "</ul>";
+    }
+
+
+    /* NOTES */
+
+    if (d.notes) {
+
+        content += `
+
+            <h3 class="section-title">
+                📝 Notes
+            </h3>
+
+            <div class="notes">
+                ${d.notes}
+            </div>
+        `;
+    }
+
+
+    document.getElementById("modalBody").innerHTML =
+        content;
+
+
+    document.getElementById("modal").style.display =
+        "flex";
 }
-function closeModal(){document.getElementById("modal").style.display="none"}
+
+
+/* =========================================================
+   CLOSE MODAL
+   ========================================================= */
+
+function closeModal() {
+
+    document.getElementById("modal").style.display =
+        "none";
+}
+
+
+/* =========================================================
+   UPDATE DASHBOARD STATS
+   ========================================================= */
+
 function updateStats() {
 
     const days = allDays();
 
-    const done = days.filter(
-        d => d.status === "done"
-    ).length;
 
-    const missed = days.filter(
-        d => d.status === "missed"
-    ).length;
+    /* -----------------------------------------
+       Challenge Status
+       ----------------------------------------- */
 
-    const pending = days.filter(
-        d => d.status === "pending"
-    ).length;
+    const done =
+        days.filter(
+            d => d.status === "done"
+        ).length;
 
 
-    // Challenge status
-
-    document.getElementById("doneDays").textContent = done;
-
-    document.getElementById("missedDays").textContent = missed;
-
-    document.getElementById("pendingDays").textContent = pending;
+    const missed =
+        days.filter(
+            d => d.status === "missed"
+        ).length;
 
 
-    // Questions
-
-    const totalQuestions = dsaData.reduce(
-        (sum, day) => sum + day.questions.length,
-        0
-    );
+    const pending =
+        days.filter(
+            d => d.status === "pending"
+        ).length;
 
 
-    // Theory
+    document.getElementById("doneDays").textContent =
+        done;
 
-    const totalTheory = dsaData.reduce(
-        (sum, day) => sum + day.theory.length,
-        0
-    );
+    document.getElementById("missedDays").textContent =
+        missed;
 
+    document.getElementById("pendingDays").textContent =
+        pending;
+
+
+    /* -----------------------------------------
+       All Problems
+       ----------------------------------------- */
+
+    const allQuestions =
+        dsaData.flatMap(
+            day => day.questions
+        );
+
+
+    /* -----------------------------------------
+       Problems Solved
+       ----------------------------------------- */
 
     document.getElementById("totalQuestions").textContent =
-        totalQuestions;
-
-    document.getElementById("totalTheory").textContent =
-        totalTheory;
+        allQuestions.length;
 
 
-    // Current streak
+    /* -----------------------------------------
+       Difficulty Breakdown
+       ----------------------------------------- */
+
+    const easyCount =
+        allQuestions.filter(
+            q =>
+                q.difficulty?.toLowerCase() === "easy"
+        ).length;
+
+
+    const mediumCount =
+        allQuestions.filter(
+            q =>
+                q.difficulty?.toLowerCase() === "medium"
+        ).length;
+
+
+    const hardCount =
+        allQuestions.filter(
+            q =>
+                q.difficulty?.toLowerCase() === "hard"
+        ).length;
+
+
+    document.getElementById("easyCount").textContent =
+        easyCount;
+
+
+    document.getElementById("mediumCount").textContent =
+        mediumCount;
+
+
+    document.getElementById("hardCount").textContent =
+        hardCount;
+
+
+    /* -----------------------------------------
+       Current Day Streak
+       ----------------------------------------- */
 
     let streak = 0;
 
-    const sortedDays = [...dsaData]
-        .sort((a, b) => b.day - a.day);
+
+    const sortedDays =
+        [...dsaData]
+            .sort(
+                (a, b) => b.day - a.day
+            );
+
 
     for (const day of sortedDays) {
 
         if (day.status === "done") {
+
             streak++;
+
         } else {
+
             break;
         }
     }
@@ -172,24 +462,119 @@ function updateStats() {
         streak;
 
 
-    // LeetCode profile
+    /* -----------------------------------------
+       LeetCode Profile
+       ----------------------------------------- */
 
     document.getElementById("leetcodeProfile").href =
         LEETCODE_PROFILE;
 }
-[...new Set(dsaData.filter(d=>d.status==="done").map(d=>d.topic))].sort().forEach(t=>{const o=document.createElement("option");o.value=t;o.textContent=t;topicFilter.appendChild(o)});
-topicFilter.onchange=e=>renderDays(e.target.value);
-window.onclick=e=>{if(e.target===document.getElementById("modal"))closeModal()};window.onkeydown=e=>{if(e.key==="Escape")closeModal()};
-updateStats();renderDays();
 
-const lastModified = new Date(document.lastModified);
+
+/* =========================================================
+   TOPIC FILTER
+   ========================================================= */
+
+[
+    ...new Set(
+
+        dsaData
+            .filter(
+                d => d.status === "done"
+            )
+            .map(
+                d => d.topic
+            )
+
+    )
+
+]
+.sort()
+.forEach(topic => {
+
+    const option =
+        document.createElement("option");
+
+
+    option.value =
+        topic;
+
+
+    option.textContent =
+        topic;
+
+
+    topicFilter.appendChild(option);
+
+});
+
+
+topicFilter.onchange = e => {
+
+    renderDays(
+        e.target.value
+    );
+
+};
+
+
+/* =========================================================
+   CLOSE MODAL WHEN CLICKING OUTSIDE
+   ========================================================= */
+
+window.onclick = e => {
+
+    if (
+        e.target ===
+        document.getElementById("modal")
+    ) {
+
+        closeModal();
+    }
+};
+
+
+/* =========================================================
+   ESC KEY CLOSES MODAL
+   ========================================================= */
+
+window.onkeydown = e => {
+
+    if (e.key === "Escape") {
+
+        closeModal();
+    }
+};
+
+
+/* =========================================================
+   LAST UPDATED
+   ========================================================= */
+
+const lastModified =
+    new Date(
+        document.lastModified
+    );
+
 
 document.getElementById("lastUpdated").textContent =
-    lastModified.toLocaleString("en-IN", {
-        day: "numeric",
-        month: "short",
-        year: "numeric",
-        hour: "numeric",
-        minute: "2-digit",
-        hour12: true
-    });
+    lastModified.toLocaleString(
+        "en-IN",
+        {
+            day: "numeric",
+            month: "short",
+            year: "numeric",
+            hour: "numeric",
+            minute: "2-digit",
+            hour12: true
+        }
+    );
+
+
+/* =========================================================
+   INITIALIZE
+   ========================================================= */
+
+updateStats();
+
+renderDays();

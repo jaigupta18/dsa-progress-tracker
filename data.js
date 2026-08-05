@@ -19,6 +19,14 @@ const dsaData = [
         topic: "Sliding Window & Strings",
 
         questions: [
+          {
+                number: 0,
+                name: "Count-occurences-of-anagrams",
+                difficulty: "Medium",
+                //if we don't provide platform, it will make LeetCode the default
+                platform: "GFG",
+                link: "https://www.geeksforgeeks.org/problems/count-occurences-of-anagrams5839/1"
+            },
             {
                 number: 209,
                 name: "Minimum Size Subarray Sum",
@@ -26,6 +34,14 @@ const dsaData = [
                 //if we don't provide platform, it will make LeetCode the default
                 platform: "LeetCode",
                 link: "https://leetcode.com/problems/minimum-size-subarray-sum/"
+            },
+            {
+                number: 0,
+                name: "First-negative-integer-in-every-window-of-size-k",
+                difficulty: "Medium",
+                //if we don't provide platform, it will make LeetCode the default
+                platform: "GFG",
+                link: "https://www.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1"
             },
             {
                 number: 151,
@@ -158,6 +174,14 @@ const dsaData = [
                 link: "https://leetcode.com/problems/sliding-window-maximum/"
             },
             {
+                number: 0,
+                name: "Longest-k-unique-characters-substring",
+                difficulty: "Medium",
+                //if we don't provide platform, it will make LeetCode the default
+                platform: "GFG",
+                link: "https://www.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1"
+            },
+            {
                 number: 3,
                 name: "Longest Substring Without Repeating Characters",
                 difficulty: "Medium",
@@ -165,7 +189,7 @@ const dsaData = [
             }
         ],
 
-        theory: [],
+        theory: ["Sliding Window"],
 
         notes: "",
 
@@ -197,7 +221,7 @@ const dsaData = [
             }
         ],
 
-        theory: [],
+        theory: ["Binary Search"],
 
         notes: "",
 
@@ -258,6 +282,22 @@ const dsaData = [
                 name: "Rotate Array",
                 difficulty: "Medium",
                 link: "https://leetcode.com/problems/rotate-array/"
+            },
+            {
+                number: 0,
+                name: "Ceil-in-a-sorted-array",
+                difficulty: "Easy",
+                //if we don't provide platform, it will make LeetCode the default
+                platform: "GFG",
+                link: "https://www.geeksforgeeks.org/problems/ceil-in-a-sorted-array/1"
+            },
+            {
+                number: 0,
+                name: "Floor-in-a-sorted-array",
+                difficulty: "Easy",
+                //if we don't provide platform, it will make LeetCode the default
+                platform: "GFG",
+                link: "https://www.geeksforgeeks.org/problems/floor-in-a-sorted-array-1587115620/1"
             }
         ],
 
@@ -266,10 +306,9 @@ const dsaData = [
         "Classic Binary Search"
        ],
 
-        // theory: [],
+        theory: [],
 
         notes: "",
-
         
     }
 
