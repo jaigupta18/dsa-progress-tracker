@@ -14,7 +14,7 @@ const dsaData = [
     day: 0,
     date: "Jul 23 – Jul 26, 2026",
     status: "history",
-    topic: "Pre-Challenge Practice",
+    topic: "Arrays, Two Pointer , Prefix Sum",
 
     questions: [
         {
@@ -122,7 +122,7 @@ const dsaData = [
             }
         ],
 
-        theory: [],
+        theory: ["Sliding Window", "Strings"],
 
         notes: "",
 
@@ -153,7 +153,7 @@ const dsaData = [
             }
         ],
 
-        theory: [],
+        theory: ["Hashing", "Sliding Window"],
 
         notes: "",
 
@@ -214,7 +214,7 @@ const dsaData = [
             }
         ],
 
-        theory: [],
+        theory: ["Sliding Window" , "Arrays"],
 
         notes: "",
 
@@ -289,6 +289,12 @@ const dsaData = [
                 name: "Search in Rotated Sorted Array",
                 difficulty: "Medium",
                 link: "https://leetcode.com/problems/search-in-rotated-sorted-array/"
+            },
+            {
+                number: 162,
+                name: "Find Peak Element",
+                difficulty: "Medium",
+                link: "https://leetcode.com/problems/find-peak-element/"
             }
         ],
 
@@ -308,32 +314,6 @@ const dsaData = [
         date: "Aug 4, 2026",
         status: "done",
         topic: "Binary Search",
-
-        questions: [
-            {
-                number: 162,
-                name: "Find Peak Element",
-                difficulty: "Medium",
-                link: "https://leetcode.com/problems/find-peak-element/"
-            }
-        ],
-
-        theory: [],
-
-        notes: "",
-
-        
-    },
-
-
-    // =========================
-    // DAY 7 - AUG 5
-    // =========================
-    {
-        day: 7,
-        date: "Aug 5, 2026",
-        status: "done",
-        topic: "Arrays & Binary Search",
 
         questions: [
             {
@@ -372,12 +352,37 @@ const dsaData = [
             }
         ],
 
-        theory: [
-        "Lower-Upper Bound",
-        "Classic Binary Search"
-       ],
+        theory: ["Lower-Upper Bound",
+        "Classic Binary Search"],
 
-        theory: [],
+        notes: "",
+
+        
+    },
+
+
+    // =========================
+    // DAY 7 - AUG 5
+    // =========================
+    {
+        day: 7,
+        date: "Aug 5, 2026",
+        status: "done",
+        topic: "Binary Search",
+
+        questions: [
+           {
+                number: 118,
+                name: "Pascals Triangle",
+                difficulty: "Easy",
+                link: "https://leetcode.com/problems/pascals-triangle/"
+            }
+            
+        ],
+
+        theory: [
+        "Arrays"
+       ],
 
         notes: "",
         
