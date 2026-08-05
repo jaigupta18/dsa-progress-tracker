@@ -8,6 +8,10 @@ const topicFilter = document.getElementById("topicFilter");
 
 function getLevel(d) {
 
+    if (d.day === 0) {
+    return "level-history";
+}
+
     if (d.status === "missed") {
         return "missed";
     }
@@ -64,13 +68,21 @@ function allDays() {
         dsaData.map(d => [d.day, d])
     );
 
+    const days = [];
 
-    return Array.from(
-        { length: CHALLENGE_DAYS },
 
-        (_, i) =>
-            map.get(i + 1) || {
-                day: i + 1,
+    // Add Day 0 if it exists in data.js
+    if (map.has(0)) {
+        days.push(map.get(0));
+    }
+
+
+    // Add Day 1 - Day 30
+    for (let day = 1; day <= CHALLENGE_DAYS; day++) {
+
+        days.push(
+            map.get(day) || {
+                day: day,
                 date: "",
                 status: "pending",
                 topic: "Pending",
@@ -78,7 +90,11 @@ function allDays() {
                 theory: [],
                 notes: ""
             }
-    );
+        );
+    }
+
+
+    return days;
 }
 
 
@@ -104,18 +120,20 @@ function renderDays(filter = "all") {
 
 
             const icon =
-                d.status === "done"
-                    ? "✓"
-                    : d.status === "missed"
-                        ? "✕"
-                        : "⌛";
+    d.day === 0
+        ? "📚"
+        : d.status === "done"
+            ? "✓"
+            : d.status === "missed"
+                ? "✕"
+                : "⌛";
 
 
             card.innerHTML = `
 
                 <div class="day-header">
 
-                    <h3>Day ${d.day}</h3>
+                    <h3>${d.day === 0 ? "Before Challenge" : `Day ${d.day}`}</h3>
 
                     <span>${icon}</span>
 
@@ -161,11 +179,9 @@ function renderDays(filter = "all") {
             `;
 
 
-            if (d.status === "done") {
-
-                card.onclick = () =>
-                    openModal(d);
-            }
+            if (d.status === "done" || d.day === 0) {
+    card.onclick = () => openModal(d);
+}
 
 
             container.appendChild(card);
@@ -341,29 +357,25 @@ function closeModal() {
 
 function updateStats() {
 
-    const days = allDays();
+  const days = allDays();
 
+// Only Day 1 to Day 30
+// Day 0 (Before Challenge) is excluded
+const challengeDays = days.filter(
+    d => d.day >= 1
+);
 
-    /* -----------------------------------------
-       Challenge Status
-       ----------------------------------------- */
+const done = challengeDays.filter(
+    d => d.status === "done"
+).length;
 
-    const done =
-        days.filter(
-            d => d.status === "done"
-        ).length;
+const missed = challengeDays.filter(
+    d => d.status === "missed"
+).length;
 
-
-    const missed =
-        days.filter(
-            d => d.status === "missed"
-        ).length;
-
-
-    const pending =
-        days.filter(
-            d => d.status === "pending"
-        ).length;
+const pending = challengeDays.filter(
+    d => d.status === "pending"
+).length;
 
 
     document.getElementById("doneDays").textContent =
@@ -435,31 +447,26 @@ function updateStats() {
        Current Day Streak
        ----------------------------------------- */
 
-    let streak = 0;
+/* -----------------------------------------
+   Current Day Streak
+   ----------------------------------------- */
 
+let streak = 0;
 
-    const sortedDays =
-        [...dsaData]
-            .sort(
-                (a, b) => b.day - a.day
-            );
+const sortedDays = dsaData
+    .filter(day => day.day >= 1)
+    .sort((a, b) => b.day - a.day);
 
+for (const day of sortedDays) {
 
-    for (const day of sortedDays) {
-
-        if (day.status === "done") {
-
-            streak++;
-
-        } else {
-
-            break;
-        }
+    if (day.status === "done") {
+        streak++;
+    } else {
+        break;
     }
+}
 
-
-    document.getElementById("streakCount").textContent =
-        streak;
+document.getElementById("streakCount").textContent = streak;
 
 
     /* -----------------------------------------

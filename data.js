@@ -9,6 +9,77 @@ const LEETCODE_PROFILE = "https://leetcode.com/u/jaigupta18/";
 
 const dsaData = [
 
+    
+    {
+    day: 0,
+    date: "Jul 23 – Jul 26, 2026",
+    status: "history",
+    topic: "Pre-Challenge Practice",
+
+    questions: [
+        {
+            number: 628,
+            name: "Maximum Product of Three Numbers",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/maximum-product-of-three-numbers/"
+        },
+        {
+            number: 438,
+            name: "Find All Anagrams in a String",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/find-all-anagrams-in-a-string/"
+        },
+        {
+            number: 42,
+            name: "Trapping Rain Water",
+            difficulty: "Hard",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/trapping-rain-water/"
+        },
+        {
+            number: 11,
+            name: "Container With Most Water",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/container-with-most-water/"
+        },
+        {
+            number: 125,
+            name: "Valid Palindrome",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/valid-palindrome/"
+        },
+        {
+            number: 15,
+            name: "3Sum",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/3sum/"
+        },
+        {
+            number: 167,
+            name: "Two Sum II - Input Array Is Sorted",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/"
+        },
+        {
+            number: 283,
+            name: "Move Zeroes",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/move-zeroes/"
+        }
+    ],
+
+    theory: [],
+
+    notes: "Problems solved during the week before starting the 30-day challenge."
+},
+
     // =========================
     // DAY 1 - JUL 30
     // =========================

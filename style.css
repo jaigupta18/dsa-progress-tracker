@@ -1202,3 +1202,13 @@ select:focus {
         min-height: 105px;
     }
 }
+
+/* =========================================================
+   PRE-CHALLENGE / HISTORY
+   ========================================================= */
+
+.level-history {
+    background: #fff7ed;
+    border-color: #fed7aa;
+    border-top: 4px solid #f97316;
+}
