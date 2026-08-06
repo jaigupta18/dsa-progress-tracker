@@ -1,20 +1,12 @@
 # DSA Progress Tracker
 
-Open `index.html` directly in your browser.
-
-The top section now includes:
+The top section includes:
 - My Learnings header
 - 30-Day Coding Challenge Tracker
 - Done / Missed / Pending counters
 - Color legend based on problem count
 - Theory-only days
-- 30 day grid, including automatic pending cards
 
-Edit only `data.js` for your daily progress.
-
-Set `status` to:
-- `done`
-- `missed`
 
 Problem-count colors:
 - 1-2 problem: green
