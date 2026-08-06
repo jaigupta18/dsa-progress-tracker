@@ -14,3 +14,4 @@ Problem-count colors:
 - 6+ problems: dark purple
 - theory only: yellow
 - problem + theory: light blue
+
