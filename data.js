@@ -376,6 +376,32 @@ const dsaData = [
                 name: "Pascals Triangle",
                 difficulty: "Easy",
                 link: "https://leetcode.com/problems/pascals-triangle/"
+            }
+            
+        ],
+
+        theory: [
+        "Arrays"
+       ],
+
+        notes: "",
+        
+    },
+    // =========================
+    // DAY 8 - AUG 6
+    // =========================
+    {
+        day: 8,
+        date: "Aug 6, 2026",
+        status: "done",
+        topic: "Binary Search",
+
+        questions: [
+           {
+                number: 875,
+                name: "koko-eating-bananas",
+                difficulty: "Medium",
+                link: "https://leetcode.com/problems/koko-eating-bananas/ "
             },
             {
                 number: 0,
@@ -389,36 +415,10 @@ const dsaData = [
         ],
 
         theory: [
-        "Binary Search on Answers"
-       ],
-
-        notes: "",
         
-    }
-    // =========================
-    // DAY 8 - AUG 6
-    // =========================
-    {
-        day: 7,
-        date: "Aug 5, 2026",
-        status: "done",
-        topic: "Binary Search",
-
-        questions: [
-           {
-                number: 875,
-                name: "koko-eating-bananas",
-                difficulty: "Medium",
-                link: "https://leetcode.com/problems/koko-eating-bananas/ "
-            }
-            
-        ],
-
-        theory: [
-        "Arrays"
        ],
 
-        notes: "",
+        notes: "Binary Search on Answers",
         
     }
 
