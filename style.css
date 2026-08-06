@@ -77,26 +77,6 @@ body {
 
 .top-header {
     position: relative;
-
-    height: 86px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background: rgba(255, 255, 255, 0.96);
-
-    border-bottom: 1px solid var(--border);
-}
-
-.top-header h1 {
-    margin: 0;
-
-    font-size: 32px;
-
-    font-weight: 750;
-
-    letter-spacing: -0.7px;
 }
 
 .last-updated {
@@ -108,8 +88,7 @@ body {
     transform: translateY(-50%);
 
     font-size: 12px;
-
-    color: var(--muted);
+    color: #94a3b8;
 }
 
 
@@ -1185,6 +1164,49 @@ select:focus {
     .stats {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    /* Header */
+    .top-header {
+        height: auto;
+        min-height: auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: 6px;
+
+        padding: 16px 20px;
+    }
+
+    .top-header h1 {
+        margin: 0;
+
+        font-size: 28px;
+        line-height: 1.2;
+
+        text-align: center;
+    }
+
+    /* Move timestamp below title */
+    .last-updated {
+        position: static;
+
+        right: auto;
+        top: auto;
+
+        transform: none;
+
+        font-size: 10px;
+        line-height: 1.3;
+
+        color: #94a3b8;
+
+        text-align: center;
+
+        white-space: nowrap;
+    }
 }
 
 
@@ -1194,8 +1216,38 @@ select:focus {
 
 @media (max-width: 500px) {
 
+    .container {
+        padding: 25px 14px 50px;
+    }
+
+
+    /* Header */
+
+    .top-header {
+        padding: 14px 12px;
+        gap: 5px;
+    }
+
+    .top-header h1 {
+        font-size: 24px;
+    }
+
+    .last-updated {
+        font-size: 9px;
+
+        white-space: normal;
+
+        max-width: 100%;
+
+        text-align: center;
+    }
+
+
+    /* Stats */
+
     .stats {
         grid-template-columns: 1fr;
+        gap: 10px;
     }
 
     .stat-card {

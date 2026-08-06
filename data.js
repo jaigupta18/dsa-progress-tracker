@@ -410,6 +410,20 @@ const dsaData = [
                 //if we don't provide platform, it will make LeetCode the default
                 platform: "GFG",
                 link: "https://www.geeksforgeeks.org/problems/aggressive-cows/1"
+            },
+            {
+                number: 0,
+                name: "Allocate-minimum-number",
+                difficulty: "Medium",
+                //if we don't provide platform, it will make LeetCode the default
+                platform: "GFG",
+                link: "https://www.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1"
+            },
+            {
+                number: 153,
+                name: "Find-minimum-in-rotated-sorted-array",
+                difficulty: "Medium",
+                link: "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/"
             }
             
         ],
