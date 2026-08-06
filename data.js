@@ -376,6 +376,40 @@ const dsaData = [
                 name: "Pascals Triangle",
                 difficulty: "Easy",
                 link: "https://leetcode.com/problems/pascals-triangle/"
+            },
+            {
+                number: 0,
+                name: "Aggressive-cows",
+                difficulty: "Medium",
+                //if we don't provide platform, it will make LeetCode the default
+                platform: "GFG",
+                link: "https://www.geeksforgeeks.org/problems/aggressive-cows/1"
+            }
+            
+        ],
+
+        theory: [
+        "Binary Search on Answers"
+       ],
+
+        notes: "",
+        
+    }
+    // =========================
+    // DAY 8 - AUG 6
+    // =========================
+    {
+        day: 7,
+        date: "Aug 5, 2026",
+        status: "done",
+        topic: "Binary Search",
+
+        questions: [
+           {
+                number: 875,
+                name: "koko-eating-bananas",
+                difficulty: "Medium",
+                link: "https://leetcode.com/problems/koko-eating-bananas/ "
             }
             
         ],
