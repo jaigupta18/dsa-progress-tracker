@@ -439,7 +439,7 @@ const dsaData = [
     // DAY 9 - AUG 6
     // =========================
     {
-        day: 8,
+        day: 9,
         date: "Aug 7, 2026",
         status: "done",
         topic: "Heap and Priority Queue",
