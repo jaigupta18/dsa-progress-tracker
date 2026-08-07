@@ -434,6 +434,27 @@ const dsaData = [
 
         notes: "Binary Search on Answers",
         
+    },
+    // =========================
+    // DAY 9 - AUG 6
+    // =========================
+    {
+        day: 8,
+        date: "Aug 7, 2026",
+        status: "done",
+        topic: "Heap and Priority Queue",
+
+        questions: [
+           
+            
+        ],
+
+        theory: ["Heap and Priority Queue"
+        
+       ],
+
+        notes: "Binary Search on Answers",
+        
     }
 
 ];
