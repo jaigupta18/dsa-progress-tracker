@@ -436,25 +436,73 @@ const dsaData = [
         
     },
     // =========================
-    // DAY 9 - AUG 6
-    // =========================
-    {
-        day: 9,
-        date: "Aug 7, 2026",
-        status: "done",
-        topic: "Heap and Priority Queue",
+// DAY 9 - AUG 7
+// =========================
+{
+    day: 9,
+    date: "Aug 7, 2026",
+    status: "done",
+    topic: "Arrays",
 
-        questions: [
-           
-            
-        ],
+    questions: [
+        {
+            number: 1732,
+            name: "Find the Highest Altitude",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/find-the-highest-altitude/"
+        },
+        {
+            number: 1331,
+            name: "Rank Transform of an Array",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/rank-transform-of-an-array/"
+        },
+        {
+            number: 1464,
+            name: "Maximum Product of Two Elements in an Array",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/"
+        },
+        {
+            number: 3345,
+            name: "Smallest Divisible Digit Product I",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/smallest-divisible-digit-product-i/"
+        }
+    ],
 
-        theory: ["Heap and Priority Queue"
-        
-       ],
+    theory: ["Heap and Priority Queue Theory"],
 
-        notes: "Binary Search on Answers",
-        
-    }
+    notes: "Random Questions"
+},
+
+
+// =========================
+// DAY 10 - AUG 8
+// =========================
+{
+    day: 10,
+    date: "Aug 8, 2026",
+    status: "done",
+    topic: "Strings",
+
+    questions: [
+        {
+            number: 28,
+            name: "Find the Index of the First Occurrence in a String",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/"
+        }
+    ],
+
+    theory: [],
+
+    notes: "Heap and Priority Queue and it's basics question done in theory"
+}
 
 ];
