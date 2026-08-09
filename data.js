@@ -515,15 +515,58 @@ const dsaData = [
 
     questions: [
         {
-            number: 28,
-            name: "Find the Index of the First Occurrence in a String",
-            difficulty: "Easy",
+            number: 239,
+            name: "Sliding Window Maximum",
+            difficulty: "Hard",
             platform: "LeetCode",
-            link: "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/"
+            link: "https://leetcode.com/problems/sliding-window-maximum/"
+        },
+        {
+            number: 621,
+            name: "Task Scheduler",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/task-scheduler/"
+        },
+        {
+            number: 373,
+            name: "Find K Pairs with Smallest Sums",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/find-k-pairs-with-smallest-sums/"
+        },
+        {
+            number: 347,
+            name: "Top K Frequent Elements",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/top-k-frequent-elements/"
+        },
+        {
+            number: 0,
+            name: "Minimum-cost-of-ropes",
+            difficulty: "Medium",
+            platform: "GFG",
+            link: "https://www.geeksforgeeks.org/problems/minimum-cost-of-ropes-1587115620/1"
+        },
+        {
+            number: 767,
+            name: "Reorganize string",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/reorganize-string/"
+        },
+        {
+            number: 0,
+            name: "Optimal-file-merge",
+            difficulty: "Medium",
+            platform: "GFG",
+            link: "https://www.geeksforgeeks.org/problems/optimal-file-merge/1"
         }
+
     ],
 
-    theory: [],
+    theory: ["Heap and Priority Queue"],
 
     notes: "Heap and Priority Queue and it's basics question done in theory"
 }
