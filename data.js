@@ -503,6 +503,30 @@ const dsaData = [
     theory: [],
 
     notes: "Heap and Priority Queue and it's basics question done in theory"
+},
+// =========================
+// DAY 11 - AUG 9
+// =========================
+{
+    day: 11,
+    date: "Aug 9, 2026",
+    status: "done",
+    topic: "Heap and Priority Queue",
+
+    questions: [
+        {
+            number: 28,
+            name: "Find the Index of the First Occurrence in a String",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/"
+        }
+    ],
+
+    theory: [],
+
+    notes: "Heap and Priority Queue and it's basics question done in theory"
 }
+
 
 ];
