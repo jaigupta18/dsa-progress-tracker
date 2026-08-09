@@ -1855,3 +1855,33 @@ body.dark-mode .difficulty-divider {
         transform: translateY(-50%) !important;
     }
 }
+
+
+/* =========================================================
+   FINAL TOUCH-DEVICE HOVER FIX
+   Chrome mobile / touch devices should NOT keep hover scale
+   after tapping the theme button.
+   ========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+    .theme-toggle:hover {
+        transform: translateY(-50%) scale(1.08) !important;
+    }
+}
+
+@media (hover: none), (pointer: coarse) {
+    .theme-toggle:hover {
+        transform: translateY(-50%) !important;
+    }
+}
+
+/* Mobile: keep the theme button fixed without hover scaling. */
+@media (max-width: 500px) {
+    .theme-toggle {
+        transform: translateY(-50%) !important;
+    }
+
+    .theme-toggle:hover {
+        transform: translateY(-50%) !important;
+    }
+}
