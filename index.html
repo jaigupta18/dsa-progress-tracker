@@ -2,17 +2,27 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>My Learnings - DSA Tracker</title>
 
-    <!-- Relative path: GitHub Pages compatible -->
-    <link rel="stylesheet" href="./style.css?v=9">
+    <!-- GitHub Pages compatible -->
+    <link
+        rel="stylesheet"
+        href="./style.css?v=10"
+    >
+
 </head>
 
+
 <body>
+
 
     <!-- =========================
          HEADER
@@ -20,22 +30,32 @@
 
     <header class="top-header">
 
-    <h1>💻 My Learnings</h1>
+        <h1>💻 My Learnings</h1>
 
-    <div class="last-updated">
-        Last updated: <span id="lastUpdated"></span>
-    </div>
 
-    <button
-        id="themeToggle"
-        class="theme-toggle"
-        aria-label="Toggle dark mode"
-        title="Toggle dark mode"
-    >
-        🌙
-    </button>
+        <!-- Last Updated -->
 
-</header>
+        <div class="last-updated">
+            Last updated:
+            <span id="lastUpdated"></span>
+        </div>
+
+
+        <!-- Theme Toggle -->
+
+        <button
+            id="themeToggle"
+            class="theme-toggle"
+            type="button"
+            aria-label="Switch to dark mode"
+            aria-pressed="false"
+            title="Toggle dark mode"
+        >
+            🌙
+        </button>
+
+    </header>
+
 
 
     <!-- =========================
@@ -51,7 +71,10 @@
 
         <section class="challenge-header">
 
-            <h2>👨‍💻 30-Day Coding Challenge Tracker</h2>
+
+            <h2>
+                👨‍💻 30-Day Coding Challenge Tracker
+            </h2>
 
 
             <!-- Challenge Status -->
@@ -63,10 +86,12 @@
                     <strong id="doneDays">0</strong>
                 </span>
 
+
                 <span>
                     ❌ Missed:
                     <strong id="missedDays">0</strong>
                 </span>
+
 
                 <span>
                     ⌛ Pending:
@@ -76,38 +101,67 @@
             </div>
 
 
-            <!-- Legend -->
+
+            <!-- =========================
+                 COLOR LEGEND
+                 ========================= -->
 
             <div class="legend">
+
+
+                <!-- Missed -->
 
                 <span>
                     <i class="box missed-box"></i>
                     Missed
                 </span>
 
+
+                <!-- Problems Only -->
+
                 <span>
                     <i class="box one-box"></i>
                     1–2 Problems
                 </span>
+
 
                 <span>
                     <i class="box medium-box"></i>
                     3–5 Problems
                 </span>
 
+
                 <span>
                     <i class="box high-box"></i>
                     6+ Problems
                 </span>
+
+
+                <!-- Theory Only -->
 
                 <span>
                     <i class="box theory-box"></i>
                     Theory Only
                 </span>
 
+
+                <!-- Problems + Theory -->
+
                 <span>
-                    <i class="box mixed-box"></i>
-                    Problems + Theory
+                    <i class="box mixed-low-box"></i>
+                    1–2 Problems & Theory
+                </span>
+
+
+                <span>
+                    <i class="box mixed-medium-box"></i>
+                    3–5 Problems & Theory
+                </span>
+
+
+                <span>
+                    <i class="box mixed-high-box"></i>
+                    6+ Problems & Theory
                 </span>
 
             </div>
@@ -115,75 +169,143 @@
         </section>
 
 
+
         <!-- =========================
              STATISTICS
              ========================= -->
 
- <section class="stats">
-
-    <!-- Problems Solved -->
-    <div class="stat-card">
-        <span id="totalQuestions">0</span>
-        <p>Problems Solved</p>
-    </div>
+        <section class="stats">
 
 
-    <!-- Difficulty Breakdown -->
-    <div class="stat-card difficulty-card">
+            <!-- Problems Solved -->
 
-        <div class="difficulty-breakdown">
+            <div class="stat-card">
 
-            <div class="difficulty-item easy">
-                <strong id="easyCount">0</strong>
-                <span>Easy</span>
+                <span id="totalQuestions">
+                    0
+                </span>
+
+                <p>
+                    Problems Solved
+                </p>
+
             </div>
 
-            <div class="difficulty-divider"></div>
 
-            <div class="difficulty-item medium">
-                <strong id="mediumCount">0</strong>
-                <span>Medium</span>
+
+            <!-- Difficulty Breakdown -->
+
+            <div class="stat-card difficulty-card">
+
+
+                <div class="difficulty-breakdown">
+
+
+                    <!-- Easy -->
+
+                    <div class="difficulty-item easy">
+
+                        <strong id="easyCount">
+                            0
+                        </strong>
+
+                        <span>
+                            Easy
+                        </span>
+
+                    </div>
+
+
+                    <div class="difficulty-divider"></div>
+
+
+                    <!-- Medium -->
+
+                    <div class="difficulty-item medium">
+
+                        <strong id="mediumCount">
+                            0
+                        </strong>
+
+                        <span>
+                            Medium
+                        </span>
+
+                    </div>
+
+
+                    <div class="difficulty-divider"></div>
+
+
+                    <!-- Hard -->
+
+                    <div class="difficulty-item hard">
+
+                        <strong id="hardCount">
+                            0
+                        </strong>
+
+                        <span>
+                            Hard
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <p>
+                    Difficulty Breakdown
+                </p>
+
             </div>
 
-            <div class="difficulty-divider"></div>
 
-            <div class="difficulty-item hard">
-                <strong id="hardCount">0</strong>
-                <span>Hard</span>
+
+            <!-- =========================
+                 STREAK
+                 ========================= -->
+
+            <div class="stat-card">
+
+                <span>
+                    🔥
+                    <span id="streakCount">
+                        0
+                    </span>
+                </span>
+
+                <p>
+                    Day Streak
+                </p>
+
             </div>
 
-        </div>
-
-        <p>Difficulty Breakdown</p>
-
-    </div>
 
 
-    <!-- Streak -->
-    <div class="stat-card">
+            <!-- =========================
+                 LEETCODE PROFILE
+                 ========================= -->
 
-        <span>
-            🔥 <span id="streakCount">0</span>
-        </span>
+            <a
+                id="leetcodeProfile"
+                class="stat-card profile-card"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
 
-        <p>Day Streak</p>
+                <span>
+                    👨‍💻
+                </span>
 
-    </div>
+                <p>
+                    LeetCode Profile ↗
+                </p>
 
+            </a>
 
-    <!-- LeetCode -->
-    <a
-        id="leetcodeProfile"
-        class="stat-card profile-card"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        <span>👨‍💻</span>
+        </section>
 
-        <p>LeetCode Profile ↗</p>
-    </a>
-
-</section>
 
 
         <!-- =========================
@@ -192,7 +314,11 @@
 
         <section class="toolbar">
 
-            <h2>Daily Progress</h2>
+
+            <h2>
+                Daily Progress
+            </h2>
+
 
             <select
                 id="topicFilter"
@@ -208,6 +334,7 @@
         </section>
 
 
+
         <!-- =========================
              DAY CARDS
              ========================= -->
@@ -221,6 +348,7 @@
     </main>
 
 
+
     <!-- =========================
          DAY DETAILS MODAL
          ========================= -->
@@ -231,26 +359,38 @@
         aria-hidden="true"
     >
 
+
         <div class="modal-content">
+
+
+            <!-- Close -->
 
             <button
                 class="x-close"
                 onclick="closeModal()"
                 aria-label="Close"
+                type="button"
             >
                 &times;
             </button>
 
 
+            <!-- Modal Title -->
+
             <h2 id="modalTitle"></h2>
 
+
+            <!-- Modal Content -->
 
             <div id="modalBody"></div>
 
 
+            <!-- Close Button -->
+
             <button
                 onclick="closeModal()"
                 class="close-btn"
+                type="button"
             >
                 Close
             </button>
@@ -260,14 +400,15 @@
     </div>
 
 
+
     <!-- =========================
          JAVASCRIPT
-         Relative paths:
-         GitHub Pages compatible
          ========================= -->
 
-    <script src="./data.js?v=9"></script>
-    <script src="./script.js?v=9"></script>
+    <script src="./data.js?v=10"></script>
+
+    <script src="./script.js?v=10"></script>
+
 
 </body>
 

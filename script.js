@@ -3,14 +3,14 @@ const topicFilter = document.getElementById("topicFilter");
 
 
 /* =========================================================
-   GET DAY CARD LEVEL
+   GET DAY COLOR / LEVEL
    ========================================================= */
 
 function getLevel(d) {
 
     if (d.day === 0) {
-    return "level-history";
-}
+        return "before-challenge";
+    }
 
     if (d.status === "missed") {
         return "missed";
@@ -24,29 +24,51 @@ function getLevel(d) {
     const theory = d.theory.length;
 
 
-    // Problems + Theory
-    if (questions > 0 && theory > 0) {
-        return "level-mixed";
-    }
+    /* =====================================================
+       THEORY ONLY
+       ===================================================== */
 
-
-    // Theory Only
     if (questions === 0 && theory > 0) {
         return "level-theory";
     }
 
+
+    /* =====================================================
+       PROBLEMS + THEORY
+       ===================================================== */
+
+    if (questions > 0 && theory > 0) {
+
+        // 1–2 Problems + Theory
+        if (questions >= 1 && questions <= 2) {
+            return "level-mixed-low";
+        }
+
+        // 3–5 Problems + Theory
+        if (questions >= 3 && questions <= 5) {
+            return "level-mixed-medium";
+        }
+
+        // 6+ Problems + Theory
+        if (questions >= 6) {
+            return "level-mixed-high";
+        }
+    }
+
+
+    /* =====================================================
+       PROBLEMS ONLY
+       ===================================================== */
 
     // 1–2 Problems
     if (questions >= 1 && questions <= 2) {
         return "level-low";
     }
 
-
     // 3–5 Problems
     if (questions >= 3 && questions <= 5) {
         return "level-medium";
     }
-
 
     // 6+ Problems
     if (questions >= 6) {
@@ -59,7 +81,16 @@ function getLevel(d) {
 
 
 /* =========================================================
-   CREATE ALL 30 DAYS
+   CREATE ALL DAYS
+   ---------------------------------------------------------
+   Includes:
+   Day 0  → Before Challenge
+   Day 1  → Day 1
+   ...
+   Day 30 → Day 30
+
+   Day 0 is displayed but is NOT part of the
+   30-day challenge statistics/streak.
    ========================================================= */
 
 function allDays() {
@@ -68,21 +99,24 @@ function allDays() {
         dsaData.map(d => [d.day, d])
     );
 
-    const days = [];
+
+    /* =====================================================
+       BEFORE CHALLENGE / DAY 0
+       ===================================================== */
+
+    const beforeChallenge =
+        map.get(0) || null;
 
 
-    // Add Day 0 if it exists in data.js
-    if (map.has(0)) {
-        days.push(map.get(0));
-    }
+    /* =====================================================
+       DAY 1 TO DAY 30
+       ===================================================== */
 
-
-    // Add Day 1 - Day 30
-    for (let day = 1; day <= CHALLENGE_DAYS; day++) {
-
-        days.push(
-            map.get(day) || {
-                day: day,
+    const challengeDays = Array.from(
+        { length: CHALLENGE_DAYS },
+        (_, i) =>
+            map.get(i + 1) || {
+                day: i + 1,
                 date: "",
                 status: "pending",
                 topic: "Pending",
@@ -90,16 +124,27 @@ function allDays() {
                 theory: [],
                 notes: ""
             }
-        );
+    );
+
+
+    /* =====================================================
+       RETURN DAY 0 FIRST
+       ===================================================== */
+
+    if (beforeChallenge) {
+        return [
+            beforeChallenge,
+            ...challengeDays
+        ];
     }
 
 
-    return days;
+    return challengeDays;
 }
 
 
 /* =========================================================
-   RENDER DAY CARDS
+   RENDER DAYS
    ========================================================= */
 
 function renderDays(filter = "all") {
@@ -113,11 +158,17 @@ function renderDays(filter = "all") {
         )
         .forEach(d => {
 
-            const card = document.createElement("article");
+            const card =
+                document.createElement("article");
+
 
             card.className =
                 `day-card ${getLevel(d)}`;
 
+
+            /* =================================================
+               STATUS ICON
+               ================================================= */
 
             const icon =
     d.day === 0
@@ -129,37 +180,69 @@ function renderDays(filter = "all") {
                 : "⌛";
 
 
+            /* =================================================
+               DAY TITLE
+
+               Day 0 is shown as:
+               Before Challenge
+
+               Day 1+ is shown normally.
+               ================================================= */
+
+            const dayTitle =
+                d.day === 0
+                    ? "Before Challenge"
+                    : `Day ${d.day}`;
+
+
             card.innerHTML = `
 
                 <div class="day-header">
 
-                    <h3>${d.day === 0 ? "Before Challenge" : `Day ${d.day}`}</h3>
+                    <h3>
+                        ${dayTitle}
+                    </h3>
 
-                    <span>${icon}</span>
+                    <span>
+                        ${icon}
+                    </span>
 
                 </div>
 
 
                 <p class="date">
-                    ${d.date || "Not logged yet"}
+
+                    ${
+                        d.date ||
+                        "Not logged yet"
+                    }
+
                 </p>
 
 
                 <div class="topic">
+
                     ${d.topic}
+
                 </div>
 
 
                 <div class="day-info">
 
+
                     ${
                         d.questions.length
                             ? `
                                 <p>
-                                    💻 ${d.questions.length}
-                                    question${d.questions.length !== 1 ? "s" : ""}
+                                    💻
+                                    ${d.questions.length}
+                                    question${
+                                        d.questions.length !== 1
+                                            ? "s"
+                                            : ""
+                                    }
                                 </p>
-                              `
+                            `
                             : ""
                     }
 
@@ -168,21 +251,34 @@ function renderDays(filter = "all") {
                         d.theory.length
                             ? `
                                 <p>
-                                    📚 ${d.theory.length}
-                                    theory topic${d.theory.length !== 1 ? "s" : ""}
+                                    📚
+                                    ${d.theory.length}
+                                    theory topic${
+                                        d.theory.length !== 1
+                                            ? "s"
+                                            : ""
+                                    }
                                 </p>
-                              `
+                            `
                             : ""
                     }
 
+
                 </div>
+
             `;
 
 
-            if (d.status === "done" || d.day === 0) {
+            /* =================================================
+               OPEN MODAL
+
+               Before Challenge is also clickable if status
+               is "done".
+               ================================================= */
+
+            if (d.day === 0 || d.status === "done") {
     card.onclick = () => openModal(d);
 }
-
 
             container.appendChild(card);
 
@@ -191,13 +287,25 @@ function renderDays(filter = "all") {
 
 
 /* =========================================================
-   OPEN DAY DETAILS
+   OPEN MODAL
    ========================================================= */
 
 function openModal(d) {
 
-    document.getElementById("modalTitle").textContent =
-        `Day ${d.day} · ${d.date}`;
+
+    /* =====================================================
+       MODAL TITLE
+       ===================================================== */
+
+    document.getElementById(
+        "modalTitle"
+    ).textContent =
+
+        d.day === 0
+
+            ? `Before Challenge · ${d.date}`
+
+            : `Day ${d.day} · ${d.date}`;
 
 
     let content = `
@@ -206,17 +314,24 @@ function openModal(d) {
 
             <div>
 
-                <strong>Topic</strong>
+                <strong>
+                    Topic
+                </strong>
 
-                <p>${d.topic}</p>
+                <p>
+                    ${d.topic}
+                </p>
 
             </div>
 
         </div>
+
     `;
 
 
-    /* QUESTIONS */
+    /* =====================================================
+       QUESTIONS
+       ===================================================== */
 
     if (d.questions.length) {
 
@@ -227,27 +342,20 @@ function openModal(d) {
             </h3>
 
             <ul class="question-list">
+
         `;
 
 
         d.questions.forEach(q => {
 
-            // Default platform = LeetCode
             const platform =
                 q.platform || "LeetCode";
-
-
-            // Convert platform name into safe CSS class
-            // "Coding Ninjas" -> "codingninjas"
-            const platformClass =
-                platform
-                    .toLowerCase()
-                    .replace(/[^a-z0-9]/g, "");
 
 
             content += `
 
                 <li class="question-item">
+
 
                     <a
                         href="${q.link}"
@@ -267,27 +375,40 @@ function openModal(d) {
 
 
                     <span class="difficulty">
+
                         ${q.difficulty}
+
                     </span>
 
 
                     <span
-                        class="platform ${platformClass}"
+                        class="platform ${platform.toLowerCase()}"
                     >
+
                         ${platform}
+
                     </span>
 
+
                 </li>
+
             `;
 
         });
 
 
-        content += "</ul>";
+        content += `
+
+            </ul>
+
+        `;
+
     }
 
 
-    /* THEORY */
+    /* =====================================================
+       THEORY
+       ===================================================== */
 
     if (d.theory.length) {
 
@@ -298,23 +419,35 @@ function openModal(d) {
             </h3>
 
             <ul class="theory-list">
+
         `;
 
 
         d.theory.forEach(t => {
 
             content += `
-                <li>${t}</li>
+
+                <li>
+                    ${t}
+                </li>
+
             `;
 
         });
 
 
-        content += "</ul>";
+        content += `
+
+            </ul>
+
+        `;
+
     }
 
 
-    /* NOTES */
+    /* =====================================================
+       NOTES
+       ===================================================== */
 
     if (d.notes) {
 
@@ -324,19 +457,27 @@ function openModal(d) {
                 📝 Notes
             </h3>
 
+
             <div class="notes">
+
                 ${d.notes}
+
             </div>
+
         `;
+
     }
 
 
-    document.getElementById("modalBody").innerHTML =
-        content;
+    document.getElementById(
+        "modalBody"
+    ).innerHTML = content;
 
 
-    document.getElementById("modal").style.display =
-        "flex";
+    document.getElementById(
+        "modal"
+    ).style.display = "flex";
+
 }
 
 
@@ -346,51 +487,89 @@ function openModal(d) {
 
 function closeModal() {
 
-    document.getElementById("modal").style.display =
-        "none";
+    document.getElementById(
+        "modal"
+    ).style.display = "none";
+
 }
 
 
 /* =========================================================
-   UPDATE DASHBOARD STATS
+   UPDATE STATS
    ========================================================= */
 
 function updateStats() {
 
-  const days = allDays();
-
-// Only Day 1 to Day 30
-// Day 0 (Before Challenge) is excluded
-const challengeDays = days.filter(
-    d => d.day >= 1
-);
-
-const done = challengeDays.filter(
-    d => d.status === "done"
-).length;
-
-const missed = challengeDays.filter(
-    d => d.status === "missed"
-).length;
-
-const pending = challengeDays.filter(
-    d => d.status === "pending"
-).length;
+    const days = allDays();
 
 
-    document.getElementById("doneDays").textContent =
-        done;
+    /* =====================================================
+       CHALLENGE DAYS ONLY
 
-    document.getElementById("missedDays").textContent =
-        missed;
+       IMPORTANT:
 
-    document.getElementById("pendingDays").textContent =
-        pending;
+       Day 0 / Before Challenge is excluded from:
+
+       - Done
+       - Missed
+       - Pending
+       - 30-day challenge statistics
+       - Streak
+
+       Day 1 → Day 30 are included.
+       ===================================================== */
+
+    const challengeDays =
+        days.filter(
+            d => d.day >= 1
+        );
 
 
-    /* -----------------------------------------
-       All Problems
-       ----------------------------------------- */
+    /* =====================================================
+       CHALLENGE STATUS
+       ===================================================== */
+
+    const done =
+        challengeDays.filter(
+            d => d.status === "done"
+        ).length;
+
+
+    const missed =
+        challengeDays.filter(
+            d => d.status === "missed"
+        ).length;
+
+
+    const pending =
+        challengeDays.filter(
+            d => d.status === "pending"
+        ).length;
+
+
+    document.getElementById(
+        "doneDays"
+    ).textContent = done;
+
+
+    document.getElementById(
+        "missedDays"
+    ).textContent = missed;
+
+
+    document.getElementById(
+        "pendingDays"
+    ).textContent = pending;
+
+
+    /* =====================================================
+       ALL QUESTIONS
+
+       Day 0 questions ARE included here.
+
+       So your "Problems Solved" count includes
+       Before Challenge questions.
+       ===================================================== */
 
     const allQuestions =
         dsaData.flatMap(
@@ -398,17 +577,19 @@ const pending = challengeDays.filter(
         );
 
 
-    /* -----------------------------------------
-       Problems Solved
-       ----------------------------------------- */
+    /* =====================================================
+       TOTAL QUESTIONS
+       ===================================================== */
 
-    document.getElementById("totalQuestions").textContent =
+    document.getElementById(
+        "totalQuestions"
+    ).textContent =
         allQuestions.length;
 
 
-    /* -----------------------------------------
-       Difficulty Breakdown
-       ----------------------------------------- */
+    /* =====================================================
+       DIFFICULTY COUNTS
+       ===================================================== */
 
     const easyCount =
         allQuestions.filter(
@@ -431,50 +612,87 @@ const pending = challengeDays.filter(
         ).length;
 
 
-    document.getElementById("easyCount").textContent =
+    document.getElementById(
+        "easyCount"
+    ).textContent =
         easyCount;
 
 
-    document.getElementById("mediumCount").textContent =
+    document.getElementById(
+        "mediumCount"
+    ).textContent =
         mediumCount;
 
 
-    document.getElementById("hardCount").textContent =
+    document.getElementById(
+        "hardCount"
+    ).textContent =
         hardCount;
 
 
-    /* -----------------------------------------
-       Current Day Streak
-       ----------------------------------------- */
+    /* =====================================================
+       CURRENT DAY STREAK
 
-/* -----------------------------------------
-   Current Day Streak
-   ----------------------------------------- */
+       IMPORTANT:
 
-let streak = 0;
+       Day 0 is completely ignored.
 
-const sortedDays = dsaData
-    .filter(day => day.day >= 1)
-    .sort((a, b) => b.day - a.day);
+       Example:
 
-for (const day of sortedDays) {
+       Day 11 → done
+       Day 10 → done
+       Day 9  → done
 
-    if (day.status === "done") {
-        streak++;
-    } else {
-        break;
+       Streak = 3
+
+       Before Challenge does NOT affect it.
+       ===================================================== */
+
+    let streak = 0;
+
+
+    const challengeDaysForStreak =
+        dsaData
+            .filter(
+                day => day.day >= 1
+            )
+            .sort(
+                (a, b) => b.day - a.day
+            );
+
+
+    for (
+        const day of challengeDaysForStreak
+    ) {
+
+        if (day.status === "done") {
+
+            streak++;
+
+        } else {
+
+            break;
+
+        }
+
     }
-}
-
-document.getElementById("streakCount").textContent = streak;
 
 
-    /* -----------------------------------------
-       LeetCode Profile
-       ----------------------------------------- */
+    document.getElementById(
+        "streakCount"
+    ).textContent =
+        streak;
 
-    document.getElementById("leetcodeProfile").href =
+
+    /* =====================================================
+       LEETCODE PROFILE
+       ===================================================== */
+
+    document.getElementById(
+        "leetcodeProfile"
+    ).href =
         LEETCODE_PROFILE;
+
 }
 
 
@@ -486,72 +704,86 @@ document.getElementById("streakCount").textContent = streak;
     ...new Set(
 
         dsaData
+
             .filter(
                 d => d.status === "done"
             )
+
             .map(
                 d => d.topic
             )
 
     )
-
 ]
-.sort()
-.forEach(topic => {
+    .sort()
+    .forEach(topic => {
 
-    const option =
-        document.createElement("option");
-
-
-    option.value =
-        topic;
+        const option =
+            document.createElement(
+                "option"
+            );
 
 
-    option.textContent =
-        topic;
+        option.value =
+            topic;
 
 
-    topicFilter.appendChild(option);
+        option.textContent =
+            topic;
 
-});
+
+        topicFilter.appendChild(
+            option
+        );
+
+    });
 
 
-topicFilter.onchange = e => {
+topicFilter.onchange = event => {
 
     renderDays(
-        e.target.value
+        event.target.value
     );
 
 };
 
 
 /* =========================================================
-   CLOSE MODAL WHEN CLICKING OUTSIDE
+   MODAL EVENTS
    ========================================================= */
 
-window.onclick = e => {
+window.onclick = event => {
 
     if (
-        e.target ===
+        event.target ===
         document.getElementById("modal")
     ) {
 
         closeModal();
+
     }
+
+};
+
+
+window.onkeydown = event => {
+
+    if (event.key === "Escape") {
+
+        closeModal();
+
+    }
+
 };
 
 
 /* =========================================================
-   ESC KEY CLOSES MODAL
+   INITIAL LOAD
    ========================================================= */
 
-window.onkeydown = e => {
+updateStats();
 
-    if (e.key === "Escape") {
-
-        closeModal();
-    }
-};
+renderDays();
 
 
 /* =========================================================
@@ -564,7 +796,10 @@ const lastModified =
     );
 
 
-document.getElementById("lastUpdated").textContent =
+document.getElementById(
+    "lastUpdated"
+).textContent =
+
     lastModified.toLocaleString(
         "en-IN",
         {
@@ -579,61 +814,130 @@ document.getElementById("lastUpdated").textContent =
 
 
 /* =========================================================
-   INITIALIZE
-   ========================================================= */
-
-updateStats();
-
-renderDays();
-
-/* =========================================================
    DARK / LIGHT MODE
    ========================================================= */
 
 const themeToggle =
-    document.getElementById("themeToggle");
-
-
-/* Load saved theme */
-
-const savedTheme =
-    localStorage.getItem("theme");
-
-
-if (savedTheme === "dark") {
-
-    document.body.classList.add("dark-mode");
-
-    themeToggle.textContent = "☀️";
-
-} else {
-
-    themeToggle.textContent = "🌙";
-}
-
-
-/* Toggle theme */
-
-themeToggle.addEventListener("click", () => {
-
-    document.body.classList.toggle("dark-mode");
-
-
-    const isDark =
-        document.body.classList.contains("dark-mode");
-
-
-    /* Change icon */
-
-    themeToggle.textContent =
-        isDark ? "☀️" : "🌙";
-
-
-    /* Remember preference */
-
-    localStorage.setItem(
-        "theme",
-        isDark ? "dark" : "light"
+    document.getElementById(
+        "themeToggle"
     );
 
-});
+
+if (themeToggle) {
+
+
+    /* =====================================================
+       LOAD SAVED THEME
+       ===================================================== */
+
+    const savedTheme =
+        localStorage.getItem(
+            "theme"
+        );
+
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add(
+            "dark-mode"
+        );
+
+
+        themeToggle.textContent =
+            "☀️";
+
+
+        themeToggle.setAttribute(
+            "aria-label",
+            "Switch to light mode"
+        );
+
+
+        themeToggle.setAttribute(
+            "aria-pressed",
+            "true"
+        );
+
+    } else {
+
+        themeToggle.textContent =
+            "🌙";
+
+
+        themeToggle.setAttribute(
+            "aria-label",
+            "Switch to dark mode"
+        );
+
+
+        themeToggle.setAttribute(
+            "aria-pressed",
+            "false"
+        );
+
+    }
+
+
+    /* =====================================================
+       TOGGLE THEME
+       ===================================================== */
+
+    themeToggle.addEventListener(
+        "click",
+        () => {
+
+
+            document.body.classList.toggle(
+                "dark-mode"
+            );
+
+
+            const isDark =
+                document.body.classList.contains(
+                    "dark-mode"
+                );
+
+
+            /* =================================================
+               CHANGE ICON
+               ================================================= */
+
+            themeToggle.textContent =
+                isDark
+                    ? "☀️"
+                    : "🌙";
+
+
+            /* =================================================
+               ACCESSIBILITY
+               ================================================= */
+
+            themeToggle.setAttribute(
+                "aria-label",
+                isDark
+                    ? "Switch to light mode"
+                    : "Switch to dark mode"
+            );
+
+
+            themeToggle.setAttribute(
+                "aria-pressed",
+                String(isDark)
+            );
+
+
+            /* =================================================
+               SAVE PREFERENCE
+               ================================================= */
+
+            localStorage.setItem(
+                "theme",
+                isDark
+                    ? "dark"
+                    : "light"
+            );
+
+        }
+    );
+
+}

@@ -224,6 +224,12 @@ body {
     align-items: center;
 
     gap: 7px;
+
+    white-space: nowrap;
+}
+
+.legend .box {
+    flex: 0 0 9px;
 }
 
 .box {
@@ -263,6 +269,20 @@ body {
 
 .mixed-box {
     background: #06b6d4;
+}
+
+
+/* Problems + Theory — separate legend colors */
+.mixed-low-box {
+    background: #14b8a6;
+}
+
+.mixed-medium-box {
+    background: #06b6d4;
+}
+
+.mixed-high-box {
+    background: #a855f7;
 }
 
 
@@ -485,45 +505,66 @@ select:focus {
 }
 
 
-/* 1–2 Problems - Fresh Green */
+/* =========================================================
+   PROBLEMS ONLY
+   ========================================================= */
+
 .level-low {
-    background: #dcfce7;
-    border-color: #bbf7d0;
+    background: #ecfdf3;
+    color: #166534;
     border-top: 4px solid #22c55e;
 }
 
-
-/* 3–5 Problems - Bright Blue */
 .level-medium {
-    background: #dbeafe;
-    border-color: #bfdbfe;
+    background: #eff6ff;
+    color: #1e3a8a;
     border-top: 4px solid #3b82f6;
 }
 
-
-/* 6+ Problems - Vibrant Purple */
 .level-high {
-    background: #ede9fe;
-    border-color: #ddd6fe;
+    background: #f5f3ff;
+    color: #5b21b6;
     border-top: 4px solid #8b5cf6;
 }
 
 
-/* Theory Only - Warm Amber */
+/* =========================================================
+   THEORY ONLY
+   ========================================================= */
+
 .level-theory {
-    background: #fef3c7;
-    border-color: #fde68a;
-    border-top: 4px solid #f59e0b;
+    background: #fff7ed;
+    color: #9a3412;
+    border-top: 4px solid #f97316;
 }
 
 
-/* Problems + Theory - Cyan / Teal */
-.level-mixed {
+/* =========================================================
+   PROBLEMS + THEORY
+   ========================================================= */
+
+/* 1–2 Problems + Theory */
+.level-mixed-low {
+    background: #ccfbf1;
+    color: #115e59;
+    border-top: 4px solid #14b8a6;
+}
+
+
+/* 3–5 Problems + Theory */
+.level-mixed-medium {
     background: #cffafe;
-    border-color: #a5f3fc;
+    color: #155e75;
     border-top: 4px solid #06b6d4;
 }
 
+
+/* 6+ Problems + Theory */
+.level-mixed-high {
+    background: #ede9fe;
+    color: #4c1d95;
+    border-top: 4px solid #7c3aed;
+}
 
 /* =========================================================
    DAY CARD CONTENT
@@ -1884,4 +1925,471 @@ body.dark-mode .difficulty-divider {
     .theme-toggle:hover {
         transform: translateY(-50%) !important;
     }
+}
+/* =========================================================
+   DARK MODE — DAY CARD COLORS
+   Professional dark tinted surfaces
+   ========================================================= */
+
+
+/* -------------------------
+   Pending
+   ------------------------- */
+
+body.dark-mode .pending {
+    background: #151d2b !important;
+    border-color: #263449 !important;
+    border-top-color: #475569 !important;
+    color: #cbd5e1 !important;
+}
+
+
+/* -------------------------
+   Missed
+   ------------------------- */
+
+body.dark-mode .missed {
+    background: #351a20 !important;
+    border-color: #6b2737 !important;
+    border-top-color: #f05268 !important;
+    color: #fecdd3 !important;
+}
+
+
+/* =========================================================
+   PROBLEMS ONLY
+   ========================================================= */
+
+
+/* 1–2 Problems */
+
+body.dark-mode .level-low {
+    background: #12261d !important;
+    border-color: #1f5c3b !important;
+    border-top-color: #22c55e !important;
+}
+
+
+/* 3–5 Problems */
+
+body.dark-mode .level-medium {
+    background: #14243a !important;
+    border-color: #28518a !important;
+    border-top-color: #3b82f6 !important;
+}
+
+
+/* 6+ Problems */
+
+body.dark-mode .level-high {
+    background: #251b3d !important;
+    border-color: #5b3aa3 !important;
+    border-top-color: #8b5cf6 !important;
+}
+
+
+/* =========================================================
+   THEORY
+   ========================================================= */
+
+
+/* Theory Only */
+
+body.dark-mode .level-theory {
+    background: #30240f !important;
+    border-color: #76551b !important;
+    border-top-color: #f59e0b !important;
+}
+
+
+/* =========================================================
+   PROBLEMS + THEORY
+   ========================================================= */
+
+
+/* 1–2 Problems + Theory */
+
+body.dark-mode .level-mixed-low {
+    background: #103034 !important;
+    border-color: #17656c !important;
+    border-top-color: #14b8a6 !important;
+}
+
+
+/* 3–5 Problems + Theory */
+
+body.dark-mode .level-mixed-medium {
+    background: #112d3b !important;
+    border-color: #176b83 !important;
+    border-top-color: #06b6d4 !important;
+}
+
+
+/* 6+ Problems + Theory */
+
+body.dark-mode .level-mixed-high {
+    background: #29203f !important;
+    border-color: #6842a8 !important;
+    border-top-color: #a78bfa !important;
+}
+
+
+/* =========================================================
+   BEFORE CHALLENGE
+   ========================================================= */
+
+body.dark-mode .level-history {
+    background: #302115 !important;
+    border-color: #75451d !important;
+    border-top-color: #f97316 !important;
+}
+
+
+/* =========================================================
+   DAY CARD TEXT
+   ========================================================= */
+
+/* Main title */
+
+body.dark-mode .day-card .day-header h3 {
+    color: #f8fafc !important;
+}
+
+
+/* Date */
+
+body.dark-mode .day-card .date {
+    color: #94a3b8 !important;
+}
+
+
+/* Topic */
+
+body.dark-mode .day-card .topic {
+    color: #e2e8f0 !important;
+}
+
+
+/* Question / theory count */
+
+body.dark-mode .day-card .day-info {
+    color: #cbd5e1 !important;
+}
+
+
+/* Pending text */
+
+body.dark-mode .pending .topic {
+    color: #94a3b8 !important;
+}
+
+body.dark-mode .pending .date {
+    color: #64748b !important;
+}
+
+
+/* =========================================================
+   CHECK MARK
+   ========================================================= */
+
+body.dark-mode .check {
+    background: #22c55e !important;
+    color: #052e16 !important;
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.25);
+}
+
+
+/* =========================================================
+   FINAL UI POLISH
+   ========================================================= */
+
+body.dark-mode .legend,
+body.dark-mode .toolbar h2 {
+    color: #cbd5e1;
+}
+
+body.dark-mode select {
+    background: #111827 !important;
+    color: #f8fafc !important;
+    border-color: #334155 !important;
+}
+
+body.dark-mode select:focus {
+    border-color: #818cf8 !important;
+}
+
+/* Dark mode day cards - readable tinted surfaces */
+
+body.dark-mode .day-card {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
+}
+
+body.dark-mode .day-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.38);
+}
+
+body.dark-mode .level-low {
+    background: #12301f !important;
+    border-color: #1d6b40 !important;
+    border-top-color: #22c55e !important;
+}
+
+body.dark-mode .level-low .day-header h3,
+body.dark-mode .level-low .topic,
+body.dark-mode .level-low .day-info {
+    color: #dcfce7 !important;
+}
+
+body.dark-mode .level-medium {
+    background: #142b4a !important;
+    border-color: #285d9c !important;
+    border-top-color: #3b82f6 !important;
+}
+
+body.dark-mode .level-medium .day-header h3,
+body.dark-mode .level-medium .topic,
+body.dark-mode .level-medium .day-info {
+    color: #dbeafe !important;
+}
+
+body.dark-mode .level-high {
+    background: #2b1d49 !important;
+    border-color: #6540a5 !important;
+    border-top-color: #8b5cf6 !important;
+}
+
+body.dark-mode .level-high .day-header h3,
+body.dark-mode .level-high .topic,
+body.dark-mode .level-high .day-info {
+    color: #ede9fe !important;
+}
+
+body.dark-mode .level-theory {
+    background: #33230d !important;
+    border-color: #8a6217 !important;
+    border-top-color: #f59e0b !important;
+}
+
+body.dark-mode .level-theory .day-header h3,
+body.dark-mode .level-theory .topic,
+body.dark-mode .level-theory .day-info {
+    color: #fef3c7 !important;
+}
+
+body.dark-mode .level-mixed-low {
+    background: #103637 !important;
+    border-color: #16727a !important;
+    border-top-color: #14b8a6 !important;
+}
+
+body.dark-mode .level-mixed-low .day-header h3,
+body.dark-mode .level-mixed-low .topic,
+body.dark-mode .level-mixed-low .day-info {
+    color: #ccfbf1 !important;
+}
+
+body.dark-mode .level-mixed-medium {
+    background: #103544 !important;
+    border-color: #197b94 !important;
+    border-top-color: #06b6d4 !important;
+}
+
+body.dark-mode .level-mixed-medium .day-header h3,
+body.dark-mode .level-mixed-medium .topic,
+body.dark-mode .level-mixed-medium .day-info {
+    color: #cffafe !important;
+}
+
+body.dark-mode .level-mixed-high {
+    background: #30234b !important;
+    border-color: #7047b5 !important;
+    border-top-color: #a78bfa !important;
+}
+
+body.dark-mode .level-mixed-high .day-header h3,
+body.dark-mode .level-mixed-high .topic,
+body.dark-mode .level-mixed-high .day-info {
+    color: #ede9fe !important;
+}
+
+body.dark-mode .level-history {
+    background: #38230f !important;
+    border-color: #8a4f1d !important;
+    border-top-color: #f97316 !important;
+}
+
+body.dark-mode .level-history .day-header h3,
+body.dark-mode .level-history .topic,
+body.dark-mode .level-history .day-info {
+    color: #ffedd5 !important;
+}
+
+body.dark-mode .pending {
+    background: #151d2b !important;
+    border-color: #2b3a50 !important;
+    border-top-color: #475569 !important;
+}
+
+body.dark-mode .pending .day-header h3 {
+    color: #cbd5e1 !important;
+}
+
+body.dark-mode .pending .topic,
+body.dark-mode .pending .day-info,
+body.dark-mode .pending .date {
+    color: #94a3b8 !important;
+}
+
+body.dark-mode .missed {
+    background: #351a20 !important;
+    border-color: #762c3b !important;
+    border-top-color: #f05268 !important;
+}
+
+body.dark-mode .missed .day-header h3,
+body.dark-mode .missed .topic,
+body.dark-mode .missed .day-info {
+    color: #fecdd3 !important;
+}
+
+body.dark-mode .day-card .date {
+    color: #94a3b8 !important;
+}
+
+/* Dark modal */
+
+body.dark-mode .modal {
+    background: rgba(2, 6, 23, 0.72);
+}
+
+body.dark-mode .modal-content {
+    background: #111827 !important;
+    border-color: #334155 !important;
+    color: #f8fafc;
+}
+
+body.dark-mode .modal-summary > div {
+    background: #172033 !important;
+    border-color: #334155 !important;
+}
+
+body.dark-mode .modal-summary strong {
+    color: #94a3b8 !important;
+}
+
+body.dark-mode .modal-summary p,
+body.dark-mode .section-title {
+    color: #f8fafc !important;
+}
+
+body.dark-mode .section-title {
+    border-color: #334155 !important;
+}
+
+body.dark-mode .question-list li,
+body.dark-mode .theory-list li {
+    color: #cbd5e1 !important;
+}
+
+body.dark-mode .question-list a {
+    color: #93c5fd !important;
+}
+
+body.dark-mode .x-close:hover {
+    background: #1e293b !important;
+    color: #fff !important;
+}
+
+body.dark-mode .notes {
+    background: #2a2108 !important;
+    border-color: #a16207 !important;
+    color: #fde68a !important;
+}
+
+body.dark-mode .close-btn {
+    background: #6366f1;
+}
+
+body.dark-mode .close-btn:hover {
+    background: #818cf8;
+}
+
+/* Touch devices: no sticky hover scaling */
+
+@media (hover: hover) and (pointer: fine) {
+    .theme-toggle:hover {
+        transform: translateY(-50%) scale(1.06) !important;
+    }
+}
+
+@media (hover: none), (pointer: coarse) {
+    .theme-toggle:hover {
+        transform: translateY(-50%) !important;
+    }
+}
+
+/* Mobile header */
+
+@media (max-width: 500px) {
+    .top-header {
+        min-height: 110px !important;
+        height: 110px !important;
+        padding: 34px 48px 10px !important;
+    }
+
+    .last-updated {
+        left: 50% !important;
+        right: auto !important;
+        top: 10px !important;
+        transform: translateX(-50%) !important;
+        width: max-content;
+        max-width: calc(100% - 90px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 11px !important;
+        line-height: 1.2;
+        white-space: nowrap !important;
+        text-align: center !important;
+    }
+
+    .top-header h1 {
+        font-size: 25px !important;
+        line-height: 1.2;
+    }
+
+    .theme-toggle {
+        right: 10px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        width: 34px !important;
+        height: 34px !important;
+    }
+}
+/* =========================================================
+   BEFORE CHALLENGE
+   ========================================================= */
+
+.day-card.before-challenge {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-top: 3px solid #f97316;
+    cursor: pointer;
+}
+
+.day-card.before-challenge:hover {
+    border-color: #fb923c;
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.12);
+    transform: translateY(-2px);
+}
+
+.dark-mode .day-card.before-challenge {
+    background: #2a1b0f;
+    border-color: #7c3f12;
+    border-top-color: #f97316;
+}
+
+.dark-mode .day-card.before-challenge:hover {
+    background: #321f0d;
+    border-color: #fb923c;
 }
