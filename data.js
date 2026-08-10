@@ -569,6 +569,31 @@ const dsaData = [
     theory: ["Heap and Priority Queue"],
 
     notes: "Heap and Priority Queue and it's basics question done in theory"
+},
+
+
+// =========================
+// DAY 12 - AUG 10
+// =========================
+{
+    day: 12,
+    date: "Aug 10, 2026",
+    status: "done",
+    topic: "Linked List",
+
+    questions: [
+        {
+            number: 203,
+            name: "Find the Index of the First Occurrence in a String",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/remove-linked-list-elements/"
+        }
+    ],
+
+    theory: ["Linked List"],
+
+    notes: "Linked List and it's basics question done in theory"
 }
 
 
