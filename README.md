@@ -1,5 +1,7 @@
 # DSA Progress Tracker
 
+website URL: https://jaigupta18.github.io/dsa-progress-tracker/
+
 The top section includes:
 - My Learnings header
 - 30-Day Coding Challenge Tracker
