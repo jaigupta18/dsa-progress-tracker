@@ -594,6 +594,57 @@ const dsaData = [
     theory: ["Linked List"],
 
     notes: "Linked List and it's basics question done in theory"
+},
+// =========================
+// DAY 13 - AUG 11
+// =========================
+{
+    day: 13,
+    date: "Aug 11, 2026",
+    status: "done",
+    topic: "Linked List",
+
+    questions: [
+
+        {
+            number: 19,
+            name: "Remove Nth Node From End of List",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/remove-nth-node-from-end-of-list/"
+        },
+
+        {
+            number: 141,
+            name: "Linked List Cycle",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/linked-list-cycle/"
+        },
+
+        {
+            number: 707,
+            name: "Design Linked List",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/design-linked-list/"
+        },
+
+        {
+            number: 328,
+            name: "Odd Even Linked List",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/odd-even-linked-list/"
+        }
+
+    ],
+
+    theory: [
+        "Linked List"
+    ],
+
+    notes: "Linked List and its basic questions done in theory"
 }
 
 
