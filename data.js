@@ -645,6 +645,52 @@ const dsaData = [
     ],
 
     notes: "Linked List and its basic questions done in theory"
+},
+// =========================
+// DAY 14 - AUG 12
+// =========================
+{
+    day: 14,
+    date: "Aug 12, 2026",
+    status: "done",
+    topic: "Linked List",
+
+    questions: [
+        {
+            number: 206,
+            name: "Reverse Linked List",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/reverse-linked-list/"
+        },
+        {
+            number: 234,
+            name: "Palindrome Linked List",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/palindrome-linked-list/"
+        },
+        {
+            number: 92,
+            name: "Reverse Linked List II",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/reverse-linked-list-ii/"
+        },
+        {
+            number: 0,
+            name: "Search-in-linked-list",
+            difficulty: "Easy",
+            platform: "GFG",
+            link: "https://www.geeksforgeeks.org/problems/search-in-linked-list-1664434326/1"
+        }
+    ],
+
+    theory: [
+        "Linked List"
+    ],
+
+    notes: "Practiced linked list reversal and palindrome problems."
 }
 
 
