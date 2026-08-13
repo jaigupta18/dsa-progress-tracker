@@ -308,30 +308,46 @@
 
 
 
-        <!-- =========================
-             DAILY PROGRESS TOOLBAR
-             ========================= -->
+<!-- =========================
+     DAILY PROGRESS TOOLBAR
+     ========================= -->
 
-        <section class="toolbar">
+<section class="toolbar">
+
+    <h2>
+        Daily Progress
+    </h2>
 
 
-            <h2>
-                Daily Progress
-            </h2>
+    <div class="toolbar-actions">
+
+        <!-- Plan of Action -->
+
+        <button
+            id="planButton"
+            class="plan-button"
+            type="button"
+        >
+            🗺️ Plan of Action
+        </button>
 
 
-            <select
-                id="topicFilter"
-                aria-label="Filter progress by topic"
-            >
+        <!-- Topic Filter -->
 
-                <option value="all">
-                    All Topics
-                </option>
+        <select
+            id="topicFilter"
+            aria-label="Filter progress by topic"
+        >
 
-            </select>
+            <option value="all">
+                All Topics
+            </option>
 
-        </section>
+        </select>
+
+    </div>
+
+</section>
 
 
 
@@ -399,6 +415,66 @@
 
     </div>
 
+    <!-- =========================
+     PLAN OF ACTION MODAL
+     ========================= -->
+
+<div
+    id="planModal"
+    class="modal"
+    aria-hidden="true"
+>
+
+
+    <div class="modal-content plan-modal">
+
+
+        <!-- Close -->
+
+        <button
+            class="x-close"
+            onclick="closePlanModal()"
+            aria-label="Close"
+            type="button"
+        >
+            &times;
+        </button>
+
+
+        <!-- Title -->
+
+        <h2>
+            🗺️ Plan of Action
+        </h2>
+
+
+        <p class="plan-subtitle">
+            DSA roadmap and planned timeline
+        </p>
+
+
+        <!-- Plan Cards -->
+
+        <div
+            id="planContainer"
+            class="plan-grid"
+        >
+        </div>
+
+
+        <!-- Close Button -->
+
+        <button
+            onclick="closePlanModal()"
+            class="close-btn"
+            type="button"
+        >
+            Close
+        </button>
+
+    </div>
+
+</div>
 
 
     <!-- =========================

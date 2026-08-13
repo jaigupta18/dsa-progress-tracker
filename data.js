@@ -691,6 +691,38 @@ const dsaData = [
     ],
 
     notes: "Practiced linked list reversal and palindrome problems."
+},
+// =========================
+// DAY 15 - AUG 13
+// =========================
+{
+    day: 15,
+    date: "Aug 13, 2026",
+    status: "done",
+    topic: "Linked List",
+
+    questions: [
+        {
+            number: 61,
+            name: "Roatate List",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/rotate-list/"
+        },
+        {
+            number: 25,
+            name: "Reverse nodes-in-k-group",
+            difficulty: "Hard",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/reverse-nodes-in-k-group/"
+        }
+    ],
+
+    theory: [
+        "Linked List"
+    ],
+
+    notes: ""
 }
 
 

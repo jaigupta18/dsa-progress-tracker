@@ -171,13 +171,13 @@ function renderDays(filter = "all") {
                ================================================= */
 
             const icon =
-    d.day === 0
-        ? "📚"
-        : d.status === "done"
-            ? "✓"
-            : d.status === "missed"
-                ? "✕"
-                : "⌛";
+                d.day === 0
+                    ? "📚"
+                    : d.status === "done"
+                        ? "✓"
+                        : d.status === "missed"
+                            ? "✕"
+                            : "⌛";
 
 
             /* =================================================
@@ -272,13 +272,19 @@ function renderDays(filter = "all") {
             /* =================================================
                OPEN MODAL
 
-               Before Challenge is also clickable if status
-               is "done".
+               Before Challenge is also clickable.
                ================================================= */
 
-            if (d.day === 0 || d.status === "done") {
-    card.onclick = () => openModal(d);
-}
+            if (
+                d.day === 0 ||
+                d.status === "done"
+            ) {
+
+                card.onclick = () =>
+                    openModal(d);
+
+            }
+
 
             container.appendChild(card);
 
@@ -287,7 +293,7 @@ function renderDays(filter = "all") {
 
 
 /* =========================================================
-   OPEN MODAL
+   OPEN DAY MODAL
    ========================================================= */
 
 function openModal(d) {
@@ -482,7 +488,7 @@ function openModal(d) {
 
 
 /* =========================================================
-   CLOSE MODAL
+   CLOSE DAY MODAL
    ========================================================= */
 
 function closeModal() {
@@ -506,8 +512,6 @@ function updateStats() {
     /* =====================================================
        CHALLENGE DAYS ONLY
 
-       IMPORTANT:
-
        Day 0 / Before Challenge is excluded from:
 
        - Done
@@ -515,8 +519,6 @@ function updateStats() {
        - Pending
        - 30-day challenge statistics
        - Streak
-
-       Day 1 → Day 30 are included.
        ===================================================== */
 
     const challengeDays =
@@ -567,8 +569,8 @@ function updateStats() {
 
        Day 0 questions ARE included here.
 
-       So your "Problems Solved" count includes
-       Before Challenge questions.
+       Therefore Before Challenge questions count toward
+       total Problems Solved.
        ===================================================== */
 
     const allQuestions =
@@ -633,19 +635,7 @@ function updateStats() {
     /* =====================================================
        CURRENT DAY STREAK
 
-       IMPORTANT:
-
        Day 0 is completely ignored.
-
-       Example:
-
-       Day 11 → done
-       Day 10 → done
-       Day 9  → done
-
-       Streak = 3
-
-       Before Challenge does NOT affect it.
        ===================================================== */
 
     let streak = 0;
@@ -749,17 +739,357 @@ topicFilter.onchange = event => {
 
 
 /* =========================================================
+   PLAN OF ACTION
+   ========================================================= */
+
+const planData = [
+
+    {
+        topic:
+            "Arrays, HashMap & Two Pointers",
+
+        duration:
+            "1 week",
+
+        comment:
+            ""
+    },
+
+
+    {
+        topic:
+            "Sliding Window",
+
+        duration:
+            "1 week",
+
+        comment:
+            ""
+    },
+
+
+    {
+        topic:
+            "Binary Search, Heap & Priority Queue",
+
+        duration:
+            "5 Working Days + 2 Weekend Days",
+
+        comment:
+            ""
+    },
+
+
+    {
+        topic:
+            "Linked List",
+
+        duration:
+            "3 Working Days",
+
+        comment:
+            "1 day more"
+    },
+
+
+    {
+        topic:
+            "Stacks & Queue",
+
+        duration:
+            "2 Working Days + 1 Weekend Day",
+
+        comment:
+            ""
+    },
+
+
+    {
+        topic:
+            "Weekend — Random",
+
+        duration:
+            "Random · 6 questions",
+
+        comment:
+            "16 Aug"
+    },
+
+
+    {
+        topic:
+            "Recursion Basics + Searching & Sorting + Time Complexity",
+
+        duration:
+            "2 Working Days",
+
+        comment:
+            ""
+    },
+
+    {
+        topic:
+            "Backtracking & Advanced Recursion",
+
+        duration:
+            "4 Working Days + 2 Weekend Days",
+
+        comment:
+            ""
+    },
+
+    {
+        topic:
+            "Trees",
+
+        duration:
+            "2 Working Days + 2 Weekend Days + 1 Working Day",
+
+        comment:
+            "23 Aug"
+    },
+
+
+    {
+        topic:
+            "Greedy",
+
+        duration:
+            "2 Working Days",
+
+        comment:
+            "30 Aug"
+    },
+
+
+    {
+        topic:
+            "Dynamic Programming",
+
+        duration:
+            "5 Working Days + 2 Weekend Days",
+
+        comment:
+            "6 Sep"
+    },
+
+
+    {
+        topic:
+            "Graphs",
+
+        duration:
+            "5 Working Days + 2 Weekend Days",
+
+        comment:
+            "13 Sep"
+    }
+
+];
+
+
+/* =========================================================
+   RENDER PLAN
+   ========================================================= */
+
+function renderPlan() {
+
+    const planContainer =
+        document.getElementById(
+            "planContainer"
+        );
+
+
+    if (!planContainer) {
+        return;
+    }
+
+
+    planContainer.innerHTML = "";
+
+
+    planData.forEach(plan => {
+
+        const card =
+            document.createElement(
+                "article"
+            );
+
+
+        card.className =
+            "plan-card";
+
+
+        const isDate =
+            /^\d{1,2} (Aug|Sep)$/
+                .test(plan.comment);
+
+
+        card.innerHTML = `
+
+            <h3>
+                ${plan.topic}
+            </h3>
+
+
+            <p class="plan-duration">
+
+                ⏱
+                ${plan.duration}
+
+            </p>
+
+
+            ${
+                plan.comment
+
+                    ? `
+
+                        <p class="plan-comment">
+
+                            ${
+                                isDate
+                                    ? "📅"
+                                    : "⚠️"
+                            }
+
+                            ${plan.comment}
+
+                        </p>
+
+                    `
+
+                    : ""
+            }
+
+        `;
+
+
+        planContainer.appendChild(
+            card
+        );
+
+    });
+
+}
+
+
+/* =========================================================
+   OPEN PLAN MODAL
+   ========================================================= */
+
+function openPlanModal() {
+
+    renderPlan();
+
+
+    const planModal =
+        document.getElementById(
+            "planModal"
+        );
+
+
+    if (!planModal) {
+        return;
+    }
+
+
+    planModal.style.display =
+        "flex";
+
+
+    planModal.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+}
+
+
+/* =========================================================
+   CLOSE PLAN MODAL
+   ========================================================= */
+
+function closePlanModal() {
+
+    const planModal =
+        document.getElementById(
+            "planModal"
+        );
+
+
+    if (!planModal) {
+        return;
+    }
+
+
+    planModal.style.display =
+        "none";
+
+
+    planModal.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+}
+
+
+/* =========================================================
+   PLAN BUTTON
+   ========================================================= */
+
+const planButton =
+    document.getElementById(
+        "planButton"
+    );
+
+
+if (planButton) {
+
+    planButton.addEventListener(
+        "click",
+        openPlanModal
+    );
+
+}
+
+
+/* =========================================================
    MODAL EVENTS
    ========================================================= */
 
 window.onclick = event => {
 
+
+    /* =====================================================
+       DAY MODAL
+       ===================================================== */
+
     if (
         event.target ===
-        document.getElementById("modal")
+        document.getElementById(
+            "modal"
+        )
     ) {
 
         closeModal();
+
+    }
+
+
+    /* =====================================================
+       PLAN MODAL
+       ===================================================== */
+
+    if (
+        event.target ===
+        document.getElementById(
+            "planModal"
+        )
+    ) {
+
+        closePlanModal();
 
     }
 
@@ -771,6 +1101,8 @@ window.onkeydown = event => {
     if (event.key === "Escape") {
 
         closeModal();
+
+        closePlanModal();
 
     }
 

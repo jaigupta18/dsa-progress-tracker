@@ -2393,3 +2393,359 @@ body.dark-mode .close-btn:hover {
     background: #321f0d;
     border-color: #fb923c;
 }
+
+.plan-button {
+    border: 1px solid #dbe3ef;
+    background: #ffffff;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.plan-button:hover {
+    transform: translateY(-1px);
+}
+
+.plan-modal {
+    max-width: 750px;
+    width: 90%;
+}
+
+.plan-subtitle {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.plan-grid {
+    display: grid;
+    gap: 12px;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.plan-card {
+    padding: 16px;
+    border-radius: 12px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #6366f1;
+}
+
+.plan-card h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+}
+
+.plan-duration,
+.plan-comment {
+    margin: 5px 0;
+    font-size: 13px;
+}
+
+.plan-comment {
+    color: #f97316;
+    font-weight: 600;
+}
+
+.dark-mode .plan-button {
+    background: #111111;
+    color: #ffffff;
+    border-color: #333333;
+}
+
+.dark-mode .plan-card {
+    background: #151515;
+    border-color: #2d2d2d;
+    border-left-color: #8b5cf6;
+}
+
+.dark-mode .plan-subtitle {
+    color: #94a3b8;
+}
+
+.dark-mode .plan-card h3 {
+    color: #ffffff;
+}
+
+.dark-mode .plan-duration {
+    color: #cbd5e1;
+}
+
+.dark-mode .plan-comment {
+    color: #fb923c;
+}
+
+
+/* =========================================================
+   FINAL PLAN OF ACTION UI
+   ========================================================= */
+
+.toolbar .plan-button {
+    margin-left: auto;
+    flex-shrink: 0;
+    height: 36px;
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+    border: 1px solid #dbe3ef;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #111827;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: none;
+    transition: transform 0.2s ease, background 0.2s ease,
+                border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.toolbar .plan-button:hover {
+    transform: translateY(-1px);
+    border-color: #c7d2fe;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.08);
+}
+
+.toolbar select {
+    height: 36px;
+    min-height: 36px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   PLAN CARDS — LIGHT MODE
+   Same color language as Daily Progress
+   ========================================================= */
+
+.plan-card {
+    border-left-width: 4px;
+    border-left-style: solid;
+}
+
+.plan-card:nth-child(1) {
+    background: #ecfdf3;
+    border-color: #bbf7d0;
+    border-left-color: #22c55e;
+}
+
+.plan-card:nth-child(2) {
+    background: #ccfbf1;
+    border-color: #99f6e4;
+    border-left-color: #14b8a6;
+}
+
+.plan-card:nth-child(3) {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+    border-left-color: #3b82f6;
+}
+
+.plan-card:nth-child(4) {
+    background: #f5f3ff;
+    border-color: #ddd6fe;
+    border-left-color: #8b5cf6;
+}
+
+.plan-card:nth-child(5) {
+    background: #ecfeff;
+    border-color: #a5f3fc;
+    border-left-color: #06b6d4;
+}
+
+.plan-card:nth-child(6) {
+    background: #fff7ed;
+    border-color: #fed7aa;
+    border-left-color: #f97316;
+}
+
+.plan-card:nth-child(7) {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+    border-left-color: #2563eb;
+}
+
+.plan-card:nth-child(8) {
+    background: #ede9fe;
+    border-color: #ddd6fe;
+    border-left-color: #7c3aed;
+}
+
+.plan-card:nth-child(9) {
+    background: #f3e8ff;
+    border-color: #e9d5ff;
+    border-left-color: #a855f7;
+}
+
+.plan-card:nth-child(10) {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+    border-left-color: #16a34a;
+}
+
+.plan-card:nth-child(11) {
+    background: #fffbeb;
+    border-color: #fde68a;
+    border-left-color: #f59e0b;
+}
+
+.plan-card:nth-child(12) {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+    border-left-color: #3b82f6;
+}
+
+.plan-card h3 {
+    color: #0f172a;
+}
+
+.plan-duration {
+    color: #475569;
+}
+
+.plan-comment {
+    color: #ea580c;
+}
+
+
+/* =========================================================
+   DARK MODE — PLAN OF ACTION
+   ========================================================= */
+
+body.dark-mode .toolbar .plan-button,
+body.dark-mode .plan-button {
+    background: #111827;
+    color: #f8fafc;
+    border-color: #334155;
+}
+
+body.dark-mode .toolbar .plan-button:hover,
+body.dark-mode .plan-button:hover {
+    background: #172033;
+    border-color: #475569;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .plan-card:nth-child(1) {
+    background: #12301f;
+    border-color: #1d6b40;
+    border-left-color: #22c55e;
+}
+
+body.dark-mode .plan-card:nth-child(2) {
+    background: #103637;
+    border-color: #16727a;
+    border-left-color: #14b8a6;
+}
+
+body.dark-mode .plan-card:nth-child(3) {
+    background: #142b4a;
+    border-color: #285d9c;
+    border-left-color: #3b82f6;
+}
+
+body.dark-mode .plan-card:nth-child(4) {
+    background: #2b1d49;
+    border-color: #6540a5;
+    border-left-color: #8b5cf6;
+}
+
+body.dark-mode .plan-card:nth-child(5) {
+    background: #103544;
+    border-color: #197b94;
+    border-left-color: #06b6d4;
+}
+
+body.dark-mode .plan-card:nth-child(6) {
+    background: #33230d;
+    border-color: #8a6217;
+    border-left-color: #f59e0b;
+}
+
+body.dark-mode .plan-card:nth-child(7) {
+    background: #14243a;
+    border-color: #28518a;
+    border-left-color: #2563eb;
+}
+
+body.dark-mode .plan-card:nth-child(8) {
+    background: #30234b;
+    border-color: #7047b5;
+    border-left-color: #a78bfa;
+}
+
+body.dark-mode .plan-card:nth-child(9) {
+    background: #30203f;
+    border-color: #7040a0;
+    border-left-color: #c084fc;
+}
+
+body.dark-mode .plan-card:nth-child(10) {
+    background: #12261d;
+    border-color: #1f5c3b;
+    border-left-color: #22c55e;
+}
+
+body.dark-mode .plan-card:nth-child(11) {
+    background: #33230d;
+    border-color: #8a6217;
+    border-left-color: #f59e0b;
+}
+
+body.dark-mode .plan-card:nth-child(12) {
+    background: #142b4a;
+    border-color: #285d9c;
+    border-left-color: #3b82f6;
+}
+
+body.dark-mode .plan-card h3 {
+    color: #f8fafc;
+}
+
+body.dark-mode .plan-duration {
+    color: #cbd5e1;
+}
+
+body.dark-mode .plan-comment {
+    color: #fb923c;
+}
+
+body.dark-mode .plan-subtitle {
+    color: #94a3b8;
+}
+
+body.dark-mode .plan-card {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.20);
+}
+
+
+/* =========================================================
+   PLAN TOOLBAR — MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+    .toolbar {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .toolbar h2 {
+        width: 100%;
+    }
+
+    .toolbar .plan-button {
+        margin-left: 0;
+        flex: 1;
+    }
+
+    .toolbar select {
+        flex: 1;
+        min-width: 0;
+    }
+}
