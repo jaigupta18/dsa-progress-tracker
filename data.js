@@ -723,6 +723,43 @@ const dsaData = [
     ],
 
     notes: ""
+},
+// =========================
+// DAY 16 - AUG 14
+// =========================
+{
+    day: 16,
+    date: "Aug 14, 2026",
+    status: "done",
+    topic: "Stacks",
+
+    questions: [
+        {
+            number: 901,
+            name: "Online Stock Span",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/online-stock-span/"
+        },
+        {
+            number: 739,
+            name: "Daily Temperatures",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/daily-temperatures/"
+        },
+        {
+            number: 503,
+            name: "Next Greater Element II",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/next-greater-element-ii/"
+        }
+    ],
+
+    theory: ["Stacks"],
+
+    notes: "Stacks and its basic questions done in theory"
 }
 
 
