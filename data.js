@@ -760,6 +760,36 @@ const dsaData = [
     theory: ["Stacks"],
 
     notes: "Stacks and its basic questions done in theory"
+},
+// =========================
+// DAY 17 - AUG 15
+// =========================
+{
+    day: 17,
+    date: "Aug 15, 2026",
+    status: "done",
+    topic: "Stacks",
+
+    questions: [
+        {
+            number: 0,
+            name: "Next Larger Element",
+            difficulty: "Medium",
+            platform: "GeeksforGeeks",
+            link: "https://www.geeksforgeeks.org/problems/next-larger-element-1587115620/1"
+        },
+        {
+            number: 20,
+            name: "Valid Parentheses",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/valid-parentheses/"
+        }
+    ],
+
+    theory: ["Stack"],
+
+    notes: "Studied Stack theory and solved 6 problems based on it"
 }
 
 
