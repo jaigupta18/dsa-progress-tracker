@@ -775,7 +775,7 @@ const dsaData = [
             number: 0,
             name: "Next Larger Element",
             difficulty: "Medium",
-            platform: "GeeksforGeeks",
+            platform: "GFG",
             link: "https://www.geeksforgeeks.org/problems/next-larger-element-1587115620/1"
         },
         {
@@ -790,7 +790,61 @@ const dsaData = [
     theory: ["Stack"],
 
     notes: "Studied Stack theory and solved 6 problems based on it"
-}
+},
+// =========================
+// DAY 18 - AUG 16
+// =========================
+{
+    day: 18,
+    date: "Aug 16, 2026",
+    status: "done",
+    topic: "Stacks",
 
+    questions: [
+        {
+            number: 85,
+            name: "Maximal Rectangle",
+            difficulty: "Hard",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/maximal-rectangle/"
+        },
+        {
+            number: 84,
+            name: "Largest Rectangle in Histogram",
+            difficulty: "Hard",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/largest-rectangle-in-histogram/"
+        }
+    ],
+
+    theory: ["Stack and Monotonic Stack"],
+
+    notes: "Practiced Largest Rectangle in Histogram and used the concept to solve Maximal Rectangle."
+},
+
+
+// =========================
+// DAY 19 - AUG 17
+// =========================
+{
+    day: 19,
+    date: "Aug 17, 2026",
+    status: "done",
+    topic: "Recursion",
+
+    questions: [
+        {
+            number: 50,
+            name: "Pow(x, n)",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/powx-n/"
+        }
+    ],
+
+    theory: ["Recursion"],
+
+    notes: "Recursion Theory"
+}
 
 ];
