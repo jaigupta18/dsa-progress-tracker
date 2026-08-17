@@ -844,7 +844,7 @@ const dsaData = [
 
     theory: ["Recursion"],
 
-    notes: "Recursion Theory"
+    notes: "Recursion Theory and its basic questions solved"
 }
 
 ];
