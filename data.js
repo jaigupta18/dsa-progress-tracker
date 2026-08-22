@@ -966,6 +966,50 @@ const dsaData = [
     theory: ["Backtracking"],
 
     notes: "Started backtracking with Combination Sum, Combinations, and Permutations."
+},
+// =========================
+// DAY 24 - AUG 22
+// =========================
+{
+    day: 24,
+    date: "Aug 22, 2026",
+    status: "done",
+    topic: "Backtracking",
+
+    questions: [
+        {
+            number: 47,
+            name: "Permutations II",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/permutations-ii/"
+        },
+        {
+            number: 40,
+            name: "Combination Sum II",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/combination-sum-ii/"
+        },
+        {
+            number: 78,
+            name: "Subsets",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/subsets/"
+        },
+        {
+            number: 90,
+            name: "Subsets II",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/subsets-ii/"
+        }
+    ],
+
+    theory: ["Backtracking"],
+
+    notes: "Practiced advanced backtracking problems."
 }
 
 ];
