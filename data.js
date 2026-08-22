@@ -845,6 +845,127 @@ const dsaData = [
     theory: ["Recursion"],
 
     notes: "Recursion Theory and its basic questions solved"
+},
+{
+    day: 20,
+    date: "Aug 18, 2026",
+    status: "done",
+    topic: "Recursion",
+
+    questions: [
+        {
+            number: 349,
+            name: "Intersection of two Arrays",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/intersection-of-two-arrays/"
+        }
+    ],
+
+    theory: ["Recursion"],
+
+    notes: "Recursion Theory and its basic questions solved"
+},
+// =========================
+// DAY 21 - AUG 19
+// =========================
+{
+    day: 21,
+    date: "Aug 19, 2026",
+    status: "done",
+    topic: "Recursion",
+
+    questions: [
+        {
+            number: 509,
+            name: "Fibonacci Number",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/fibonacci-number/"
+        },
+        {
+            number: 70,
+            name: "Climbing Stairs",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/climbing-stairs/"
+        }
+    ],
+
+    theory: ["Recursion"],
+
+    notes: "Practiced basic recursion and recursion-to-iteration concepts with Fibonacci Number and Climbing Stairs."
+},
+
+
+// =========================
+// DAY 22 - AUG 20
+// =========================
+{
+    day: 22,
+    date: "Aug 20, 2026",
+    status: "done",
+    topic: "Recursion",
+
+    questions: [
+        {
+            number: 3072,
+            name: "Distribute Elements Into Two Arrays I",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/distribute-elements-into-two-arrays-i/"
+        },
+        {
+            number: 62,
+            name: "Unique Paths",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/unique-paths/"
+        }
+    ],
+
+    theory: ["Recursion"],
+
+    notes: "Practiced recursion with array distribution and Unique Paths."
+},
+
+
+// =========================
+// DAY 23 - AUG 21
+// =========================
+{
+    day: 23,
+    date: "Aug 21, 2026",
+    status: "done",
+    topic: "Backtracking",
+
+    questions: [
+        {
+            number: 39,
+            name: "Combination Sum",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/combination-sum/"
+        },
+        {
+            number: 77,
+            name: "Combinations",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/combinations/"
+        },
+        {
+            number: 46,
+            name: "Permutations",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/permutations/"
+        }
+    ],
+
+    theory: ["Backtracking"],
+
+    notes: "Started backtracking with Combination Sum, Combinations, and Permutations."
 }
 
 ];
