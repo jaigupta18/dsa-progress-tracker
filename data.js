@@ -1004,10 +1004,31 @@ const dsaData = [
             difficulty: "Medium",
             platform: "LeetCode",
             link: "https://leetcode.com/problems/subsets-ii/"
+        },,
+        {
+            number: 0,
+            name: "Palindrome",
+            difficulty: "Easy",
+            platform: "GFG",
+            link: "https://www.geeksforgeeks.org/problems/palindrome0746/1"
+        },
+        {
+            number: 0,
+            name: "Print 1 to N Without Using Loops",
+            difficulty: "Easy",
+            platform: "GFG",
+            link: "https://www.geeksforgeeks.org/problems/print-1-to-n-without-using-loops3621/1"
+        },
+        {
+            number: 0,
+            name: "Factorial",
+            difficulty: "Easy",
+            platform: "GFG",
+            link: "https://www.geeksforgeeks.org/problems/factorial5739/1"
         }
     ],
 
-    theory: ["Backtracking"],
+    theory: ["Backtracking, Recursion"],
 
     notes: "Practiced advanced backtracking problems."
 }
