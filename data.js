@@ -1004,7 +1004,7 @@ const dsaData = [
             difficulty: "Medium",
             platform: "LeetCode",
             link: "https://leetcode.com/problems/subsets-ii/"
-        },,
+        },
         {
             number: 0,
             name: "Palindrome",
