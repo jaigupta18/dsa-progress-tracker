@@ -1,4 +1,4 @@
-const CHALLENGE_DAYS = 30;
+const CHALLENGE_DAYS = 45;
 
 const LEETCODE_PROFILE = "https://leetcode.com/u/jaigupta18/";
 
@@ -77,7 +77,7 @@ const dsaData = [
 
     theory: [],
 
-    notes: "Problems solved during the week before starting the 30-day challenge."
+    notes: "Problems solved during the week before starting the 45-day challenge."
 },
 
     // =========================
@@ -974,7 +974,7 @@ const dsaData = [
     day: 24,
     date: "Aug 22, 2026",
     status: "done",
-    topic: "Backtracking",
+    topic: "Recursion & Backtracking",
 
     questions: [
         {
@@ -1031,6 +1031,255 @@ const dsaData = [
     theory: ["Backtracking, Recursion"],
 
     notes: "Practiced advanced backtracking problems."
+},
+// =========================
+// DAY 25 - AUG 23
+// =========================
+{
+    day: 25,
+    date: "Aug 23, 2026",
+    status: "done",
+    topic: "Backtracking & Recursion",
+
+    questions: [
+        {
+            number: 22,
+            name: "Generate Parentheses",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/generate-parentheses/"
+        },
+        {
+            number: 90,
+            name: "Subsets II",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/subsets-ii/"
+        }
+    ],
+
+    theory: [
+        "Backtracking",
+        "Recursion"
+    ],
+
+    notes: "Practiced advanced backtracking along with recursion basics using Permutations II, Combination Sum II, Subsets, Subsets II, Palindrome, Print 1 to N Without Using Loops, and Factorial."
+},
+
+
+// =========================
+// DAY 26 - AUG 24
+// =========================
+{
+    day: 26,
+    date: "Aug 24, 2026",
+    status: "done",
+    topic: "Backtracking",
+
+    questions: [
+        {
+            number: 17,
+            name: "Letter Combinations of a Phone Number",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/letter-combinations-of-a-phone-number/"
+        },
+        {
+            number: 1219,
+            name: "Path with Maximum Gold",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/path-with-maximum-gold/"
+        },
+        {
+            number: 507,
+            name: "Perfect Number",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/perfect-number/"
+        }
+    ],
+
+    theory: [
+        "Backtracking"
+    ],
+
+    notes: "Practiced backtracking and recursion problems."
+},
+
+
+// =========================
+// DAY 27 - AUG 25
+// =========================
+{
+    day: 27,
+    date: "Aug 25, 2026",
+    status: "done",
+    topic: "Arrays & Backtracking",
+
+    questions: [
+        {
+            number: 2999,
+            name: "Smallest Missing Multiple of K",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/smallest-missing-multiple-of-k/"
+        },
+        {
+            number: 0,
+            name: "Min Steps by Knight",
+            difficulty: "Medium",
+            platform: "GFG",
+            link: "https://www.geeksforgeeks.org/problems/steps-by-knight5927/1"
+        }
+    ],
+
+    theory: [
+        "Arrays"
+    ],
+
+    notes: "Practiced array and divisibility concepts."
+},
+
+
+// =========================
+// DAY 28 - AUG 26
+// =========================
+{
+    day: 28,
+    date: "Aug 26, 2026",
+    status: "done",
+    topic: "Sorting",
+
+    questions: [
+        {
+            number: 506,
+            name: "Relative Ranks",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/relative-ranks/"
+        }
+    ],
+
+    theory: [
+        "Sorting"
+    ],
+
+    notes: "Practiced sorting and ranking elements."
+},
+
+
+// =========================
+// DAY 29 - AUG 27
+// =========================
+{
+    day: 29,
+    date: "Aug 27, 2026",
+    status: "done",
+    topic: "Trees",
+
+    questions: [
+        {
+            number: 367,
+            name: "Valid Perfect Square",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/valid-perfect-square/"
+        },
+        {
+            number: 104,
+            name: "Maximum Depth of Binary Tree",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/maximum-depth-of-binary-tree/"
+        },
+        {
+            number: 101,
+            name: "Symmetric Tree",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/symmetric-tree/"
+        },
+        {
+            number: 112,
+            name: "Path Sum",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/path-sum/"
+        },
+        {
+            number: 113,
+            name: "Path Sum II",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/path-sum-ii/"
+        }
+    ],
+
+    theory: [
+        "Binary Trees"
+    ],
+
+    notes: "Practiced binary tree basics including depth, symmetry, and path sum problems."
+},
+
+
+// =========================
+// DAY 30 - AUG 28
+// =========================
+{
+    day: 30,
+    date: "Aug 28, 2026",
+    status: "done",
+    topic: "Trees",
+
+    questions: [
+        {
+            number: 144,
+            name: "Binary Tree Preorder Traversal",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/binary-tree-preorder-traversal/"
+        },
+        {
+            number: 94,
+            name: "Binary Tree Inorder Traversal",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/binary-tree-inorder-traversal/"
+        }
+    ],
+
+    theory: [
+        "Binary Tree"
+    ],
+
+    notes: "Practiced binary tree traversal using Preorder and Inorder traversal."
+},
+// =========================
+// DAY 31 - AUG 29
+// =========================
+{
+    day: 31,
+    date: "Aug 29, 2026",
+    status: "done",
+    topic: "Trees",
+
+    questions: [
+        {
+            number: 145,
+            name: "Binary Tree Postorder Traversal",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/binary-tree-postorder-traversal/"
+        }
+    ],
+
+    theory: [
+        "Binary Tree"
+    ],
+
+    notes: ""
 }
 
 ];
