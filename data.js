@@ -1280,6 +1280,218 @@ const dsaData = [
     ],
 
     notes: ""
+},
+// =========================
+// DAY 32 - AUG 30
+// =========================
+{
+    day: 32,
+    date: "Aug 30, 2026",
+    status: "done",
+    topic: "Trees",
+
+    questions: [
+        {
+            number: 111,
+            name: "Minimum Depth of Binary Tree",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/minimum-depth-of-binary-tree/"
+        }
+    ],
+
+    theory: ["Binary Trees"],
+
+    notes: "Practiced binary tree depth problems and basic question done in theory"
+},
+
+
+// =========================
+// DAY 33 - AUG 31
+// =========================
+{
+    day: 33,
+    date: "Aug 31, 2026",
+    status: "done",
+    topic: "Arrays",
+
+    questions: [
+        {
+            number: 26,
+            name: "Remove Duplicates from Sorted Array",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/remove-duplicates-from-sorted-array/"
+        }
+    ],
+
+    theory: ["Arrays"],
+
+    notes: "Random"
+},
+
+
+// =========================
+// DAY 34 - SEP 1
+// =========================
+{
+    day: 34,
+    date: "Sep 1, 2026",
+    status: "done",
+    topic: "Queue",
+
+    questions: [
+        {
+            number: 232,
+            name: "Implement Queue using Stacks",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/implement-queue-using-stacks/"
+        }
+    ],
+
+    theory: ["Queue"],
+
+    notes: "Queue and its basic question done in theory"
+},
+
+
+// =========================
+// DAY 35 - SEP 2
+// =========================
+{
+    day: 35,
+    date: "Sep 2, 2026",
+    status: "done",
+    topic: "Queue",
+
+    questions: [
+        {
+            number: 622,
+            name: "Design Circular Queue",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/design-circular-queue/"
+        }
+    ],
+
+    theory: ["Queue"],
+
+    notes: "Queue and its basic question done in theory"
+},
+
+
+// =========================
+// DAY 36 - SEP 3
+// =========================
+{
+    day: 36,
+    date: "Sep 3, 2026",
+    status: "done",
+    topic: "Trees & Arrays",
+
+    questions: [
+        {
+            number: 102,
+            name: "Binary Tree Level Order Traversal",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/binary-tree-level-order-traversal/"
+        },
+        {
+            number: 3876,
+            name: "Construct Uniform Parity Array II",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/construct-uniform-parity-array-ii/"
+        }
+    ],
+
+    theory: ["Trees", "Arrays"],
+
+    notes: "Binary Tree"
+},
+
+
+// =========================
+// DAY 37 - SEP 4
+// =========================
+{
+    day: 37,
+    date: "Sep 4, 2026",
+    status: "done",
+    topic: "Arrays",
+
+    questions: [
+        {
+            number: 3903,
+            name: "Smallest Stable Index I",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/smallest-stable-index-i/"
+        }
+    ],
+
+    theory: ["Arrays"],
+
+    notes: "Random"
+},
+
+
+// =========================
+// DAY 38 - SEP 5
+// =========================
+{
+    day: 38,
+    date: "Sep 5, 2026",
+    status: "done",
+    topic: "Strings",
+
+    questions: [
+        {
+            number: 1209,
+            name: "Remove All Adjacent Duplicates in String II",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/"
+        },
+        {
+            number: 3904,
+            name: "Smallest Stable Index II",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/smallest-stable-index-ii"
+        }
+    ],
+
+    theory: ["Strings", "Stack"],
+
+    notes: "Random"
+},
+
+
+// =========================
+// DAY 39 - SEP 6
+// =========================
+{
+    day: 39,
+    date: "Sep 6, 2026",
+    status: "done",
+    topic: "Linked List",
+
+    questions: [
+        {
+            number: 83,
+            name: "Remove Duplicates from Sorted List",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/remove-duplicates-from-sorted-list/"
+        }
+    ],
+
+    theory: ["Linked List"],
+
+    notes: "Random"
 }
 
 ];
