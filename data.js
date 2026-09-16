@@ -1,4 +1,4 @@
-const CHALLENGE_DAYS = 45;
+const CHALLENGE_DAYS = 75;
 
 const LEETCODE_PROFILE = "https://leetcode.com/u/jaigupta18/";
 
@@ -1492,6 +1492,380 @@ const dsaData = [
     theory: ["Linked List"],
 
     notes: "Random"
+},
+// =========================
+// DAY 40 - SEP 7
+// =========================
+{
+    day: 40,
+    date: "Sep 7, 2026",
+    status: "done",
+    topic: "Trees",
+
+    questions: [
+        {
+            number: 100,
+            name: "Same Tree",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/same-tree/"
+        },
+        {
+            number: 226,
+            name: "Invert Binary Tree",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/invert-binary-tree/"
+        }
+    ],
+
+    theory: ["Binary Trees"],
+
+    notes: "Practiced basic binary tree comparison and inversion."
+},
+
+
+// =========================
+// DAY 41 - SEP 8
+// =========================
+{
+    day: 41,
+    date: "Sep 8, 2026",
+    status: "done",
+    topic: "Trees",
+
+    questions: [{
+            number: 226,
+            name: "Invert Binary Tree",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/invert-binary-tree/"
+        }],
+
+    theory: ["Binary Trees"],
+
+    notes: ""
+},
+
+
+// =========================
+// DAY 42 - SEP 9
+// =========================
+{
+    day: 42,
+    date: "Sep 9, 2026",
+    status: "done",
+    topic: "Arrays",
+
+    questions: [
+        {
+            number: 3870,
+            name: "Count Commas in Range",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/count-commas-in-range/"
+        },
+        {
+            number: 3871,
+            name: "Count Commas in Range II",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/count-commas-in-range-ii/"
+        }
+    ],
+
+    theory: ["Arrays"],
+
+    notes: "Practiced array and range-based counting problems."
+},
+
+
+// =========================
+// DAY 43 - SEP 10
+// =========================
+{
+    day: 43,
+    date: "Sep 10, 2026",
+    status: "done",
+    topic: "Trees",
+
+    questions: [
+        {
+            number: 543,
+            name: "Diameter of Binary Tree",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/diameter-of-binary-tree/"
+        },
+        {
+            number: 112,
+            name: "Path Sum",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/path-sum/"
+        },
+        {
+            number: 104,
+            name: "Maximum Depth of Binary Tree",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/maximum-depth-of-binary-tree/"
+        },
+        {
+            number: 101,
+            name: "Symmetric Tree",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/symmetric-tree/"
+        },
+        {
+            number: 110,
+            name: "Balanced Binary Tree",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/balanced-binary-tree/"
+        }
+    ],
+
+    theory: ["Binary Trees"],
+
+    notes: "Practiced binary tree depth, balance, symmetry, path sum, and diameter problems."
+},
+
+
+// =========================
+// DAY 44 - SEP 11
+// =========================
+{
+    day: 44,
+    date: "Sep 11, 2026",
+    status: "done",
+    topic: "Trees",
+
+    questions: [
+        {
+            number: 2265,
+            name: "Count Nodes Equal to Average of Subtree",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/count-nodes-equal-to-average-of-subtree/"
+        }
+    ],
+
+    theory: ["Binary Trees"],
+
+    notes: "Practiced subtree calculations using DFS."
+},
+
+
+// =========================
+// DAY 45 - SEP 12
+// =========================
+{
+    day: 45,
+    date: "Sep 12, 2026",
+    status: "done",
+    topic: "Trees",
+
+    questions: [
+        {
+            number: 257,
+            name: "Binary Tree Paths",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/binary-tree-paths/"
+        },
+        {
+            number: 3483,
+            name: "Unique 3-Digit Even Numbers",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/unique-3-digit-even-numbers/"
+        }
+    ],
+
+    theory: ["Binary Trees"],
+
+    notes: "Practiced binary tree path generation and a number construction problem."
+},
+
+
+// =========================
+// DAY 46 - SEP 13
+// =========================
+{
+    day: 46,
+    date: "Sep 13, 2026",
+    status: "done",
+    topic: "Trees & Backtracking",
+
+    questions: [
+        {
+            number: 103,
+            name: "Binary Tree Zigzag Level Order Traversal",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/"
+        },
+        {
+            number: 889,
+            name: "Construct Binary Tree from Preorder and Postorder Traversal",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/"
+        },
+        {
+            number: 106,
+            name: "Construct Binary Tree from Inorder and Postorder Traversal",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/"
+        },
+        {
+            number: 1123,
+            name: "Lowest Common Ancestor of Deepest Leaves",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves/"
+        },
+        {
+            number: 236,
+            name: "Lowest Common Ancestor of a Binary Tree",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/"
+        },
+        {
+            number: 113,
+            name: "Path Sum II",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/path-sum-ii/"
+        },
+        {
+            number: 1079,
+            name: "Letter Tile Possibilities",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/letter-tile-possibilities/"
+        },
+        {
+            number: 791,
+            name: "Custom Sort String",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/custom-sort-string/"
+        },
+        {
+            number: 739,
+            name: "Daily Temperatures",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/daily-temperatures/"
+        }
+    ],
+
+    theory: [
+        "Binary Trees",
+        "Backtracking",
+        "Stack"
+    ],
+
+    notes: "Heavy practice day covering binary tree traversal, tree construction, LCA, path problems, backtracking, custom sorting, and monotonic stack."
+},
+
+
+// =========================
+// DAY 47 - SEP 14
+// =========================
+{
+    day: 47,
+    date: "Sep 14, 2026",
+    status: "done",
+    topic: "Stacks",
+
+    questions: [{
+            number: 739,
+            name: "Daily Temperatures",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/daily-temperatures/"
+        }],
+
+    theory: ["Stacks"],
+
+    notes: ""
+},
+
+
+// =========================
+// DAY 48 - SEP 15
+// =========================
+{
+    day: 48,
+    date: "Sep 15, 2026",
+    status: "done",
+    topic: "Trees",
+
+    questions: [
+        {
+            number: 105,
+            name: "Construct Binary Tree from Preorder and Inorder Traversal",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/"
+        },
+        {
+            number: 836,
+            name: "Rectangle Overlap",
+            difficulty: "Easy",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/rectangle-overlap/"
+        }
+    ],
+
+    theory: ["Binary Trees"],
+
+    notes: "Practiced binary tree construction and rectangle overlap."
+},
+
+
+// =========================
+// DAY 49 - SEP 16
+// =========================
+{
+    day: 49,
+    date: "Sep 16, 2026",
+    status: "done",
+    topic: "Trees",
+
+    questions: [
+        {
+            number: 103,
+            name: "Binary Tree Zigzag Level Order Traversal",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/"
+        },
+        {
+            number: 889,
+            name: "Construct Binary Tree from Preorder and Postorder Traversal",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/"
+        },
+        {
+            number: 106,
+            name: "Construct Binary Tree from Inorder and Postorder Traversal",
+            difficulty: "Medium",
+            platform: "LeetCode",
+            link: "https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/"
+        }
+    ],
+
+    theory: ["Binary Trees"],
+
+    notes: "Practiced binary tree traversal and construction from different traversal combinations."
 }
 
 ];
