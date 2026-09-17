@@ -1701,27 +1701,6 @@ const dsaData = [
 
     questions: [
         {
-            number: 103,
-            name: "Binary Tree Zigzag Level Order Traversal",
-            difficulty: "Medium",
-            platform: "LeetCode",
-            link: "https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/"
-        },
-        {
-            number: 889,
-            name: "Construct Binary Tree from Preorder and Postorder Traversal",
-            difficulty: "Medium",
-            platform: "LeetCode",
-            link: "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/"
-        },
-        {
-            number: 106,
-            name: "Construct Binary Tree from Inorder and Postorder Traversal",
-            difficulty: "Medium",
-            platform: "LeetCode",
-            link: "https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/"
-        },
-        {
             number: 1123,
             name: "Lowest Common Ancestor of Deepest Leaves",
             difficulty: "Medium",
