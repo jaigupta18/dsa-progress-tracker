@@ -1747,7 +1747,7 @@ const dsaData = [
     theory: [
         "Binary Trees",
         "Backtracking",
-        "Stack"
+        "Stacks"
     ],
 
     notes: "Heavy practice day covering binary tree traversal, tree construction, LCA, path problems, backtracking, custom sorting, and monotonic stack."
